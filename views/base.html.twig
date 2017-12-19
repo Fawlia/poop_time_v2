@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport"
+			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>{% block title %}Poop Time, l'application!{% endblock %}</title>
+        
+		<meta property="og:title" content="Poop Time"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://localhost/pooptime/"/>
+		<meta property="og:description" content="Poop-time, l'appli qui vous sort de la merde!"/>
+		<meta property="og:site_name" content="Poop Time"/>
+
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:title" content="Poop Time">
+		<meta name="twitter:url" content="http://localhost/pootime/">
+		<meta name="twitter:description" content="Poop-time, l'appli qui vous sort de la merde!">
+		
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="style.css">
+		
+    </head>
+    <body>
+       
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+	
+</html>

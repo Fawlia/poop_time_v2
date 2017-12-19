@@ -1,0 +1,13 @@
+{
+    "name": "root/pt",
+    "authors": [
+        {
+            "name": "Fawlia",
+            "email": "yohann.t@codeur.online"
+        }
+    ],
+    "require": {
+		"altorouter/altorouter": "1.1.0",
+        "twig/twig": "^2.0"
+	}
+}
