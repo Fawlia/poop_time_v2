@@ -5,6 +5,7 @@
 		<meta name="viewport"
 			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+      
        <title>{% block title %}Poop Time, l'application!{% endblock %}</title>
         
 		<meta property="og:title" content="Poop Time"/>
@@ -18,16 +19,54 @@
 		<meta name="twitter:url" content="http://localhost/pootime/">
 		<meta name="twitter:description" content="Poop-time, l'appli qui vous sort de la merde!">
 		
-		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-		<link rel="stylesheet" href="style.css">
+		<link type="text/css" rel="stylesheet" href="http://localhost/PT/views/css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="http://localhost/PT/views/css/style.css">
 		
     </head>
     <body>
+    	<header>
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#!" class="brand-logo">Logo</a>
+					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="home">Accueil</a></li>
+						<li><a href="form">Proposez votre toilette</a></li>
+						<li><a href="top_ten">Top 10</a></li>
+						<li><a href="history">Histoire</a></li>
+						<li><a href="apropos">A Propos</a></li>
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						<li><a href="home">Accueil</a></li>
+						<li><a href="form">Proposez votre toilette</a></li>
+						<li><a href="top_ten">Top 10</a></li>
+						<li><a href="history">Histoire</a></li>
+						<li><a href="fun_facts">Fun Facts</a></li>
+						<li><a href="apropos">A Propos</a></li>
+					</ul>
+				</div>
+			</nav>
+     	</header>
+      
        
 
         <div id="content">
             {% block body %}{% endblock %}
         </div>
+        
+		<footer>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="" id="footer">
+						<p>Réalisation : Floriane - Anthony - Yohann</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<script type="text/javascript" src="http://localhost/PT/views/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="http://localhost/PT/views/js/materialize.min.js"></script>
+		<script> $(".button-collapse").sideNav(); </script>
+   
     </body>
-	
 </html>
