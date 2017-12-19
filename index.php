@@ -46,6 +46,21 @@ $router->map( 'GET', '/apropos', function() {
 	
 });
 
+$router->map( 'GET', '/contact', function() {
+	
+		global $twig;
+	echo $twig->render('contact.html.twig');
+	
+});
+
+
+$router->map( 'GET', '/insert', function() {
+	
+		require_once db_config.php;
+		global $twig;
+	echo $twig->render('insert.html.twig');
+	
+});
 
 
 
