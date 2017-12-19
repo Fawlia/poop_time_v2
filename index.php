@@ -32,6 +32,23 @@ $router->map( 'GET', '/form', function() {
 });
 
 
+$router->map( 'GET', '/history', function() {
+	
+		global $twig;
+	echo $twig->render('history.html.twig');
+	
+});
+
+$router->map( 'GET', '/apropos', function() {
+	
+		global $twig;
+	echo $twig->render('apropos.html.twig');
+	
+});
+
+
+
+
 $router->map( 'GET', '/test', function() {
     echo "Bonjour";
 });
