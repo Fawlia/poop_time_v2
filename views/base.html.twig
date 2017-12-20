@@ -20,11 +20,12 @@
 		<meta name="twitter:description" content="Poop-time, l'appli qui vous sort de la merde!">
 
 		<link type="text/css" rel="stylesheet" href="http://localhost/poop_time_v2/views/style/css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="http://localhost/poop_time_v2/views/style/css/leaflet.css" />
 		<link rel="stylesheet" href="http://localhost/poop_time_v2/views/css/style.css">
 
 		 <style>
 		   #map {
-				height: 400px;
+				height: 600px;
 				width: 100%;
 		   }
 		</style>
@@ -73,153 +74,44 @@
 
 		<script type="text/javascript" src="http://localhost/poop_time_v2/views/js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="http://localhost/poop_time_v2/views/js/materialize.min.js"></script>
+		<script src="http://localhost/poop_time_v2/views/js/leaflet.js"></script>
 		<script> $(".button-collapse").sideNav(); </script>
 
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_xOsjcCZU1DVg_PyBJmJEcjxEOqeHrqg"></script>
+		<script>
 
-        <script type="text/javascript">
-            // When the window has finished loading create our google map below
-            google.maps.event.addDomListener(window, 'load', init);
+		var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.8);
 
-            function init() {
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+			maxZoom: 18,
+			id: 'mapbox.streets',
+			accessToken: 'pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ'
+		}).addTo(mymap);
 
-                var mapOptions = {
-
-                    zoom: 7,
-					center: new google.maps.LatLng(47.454282, 6.166001),
-
-					disableDefaultUI: true,
-
-
-                    styles: [
-    {
-        "featureType": "administrative",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#444444"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#c0aabd"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 45
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "color": "#7f5281"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    }
-]
-                };
+			var myIcon = L.icon({
+				iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo.png',
+				iconSize: [25, 47],
+				iconAnchor: [12.5, 46],
+				popupAnchor: [-3, -76],
+			});
 
 
-                var mapElement = document.getElementById('map');
+			 {% for v in mark2 %}
+			var marker = L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap);
+			 {% endfor %}
 
+			 var popup = L.popup();
 
-                var map = new google.maps.Map(mapElement, mapOptions);
+			function markerOnClick(e) {
+				document.location.href="description"
+			}
+
+			mymap.on('click', onMapClick);
 
 
 
+		</script>
 
 
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(47.454282, 6.166001),
-                    map: map,
-                    title: 'cv'
-                });
-            }
-        </script>
 
 
     </body>
