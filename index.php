@@ -18,11 +18,6 @@ $twig = new Twig_Environment($loader, array(
 
 $router->map( 'GET', '/home', function() {
 
-
-	global $twig;
-	echo $twig->render('index.html.twig', array('name' => 'Fabien'));
-
-
 	include_once "db_config.php";
 	include_once "./models/Toilettes.class.php";
 	$mark = new Toilettes;
