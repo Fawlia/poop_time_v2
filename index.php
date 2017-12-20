@@ -16,9 +16,13 @@ $twig = new Twig_Environment($loader, array(
 // map homepage
 
 $router->map( 'GET', '/home', function() {
-	
+	include_once "db_config.php";
+	include_once "./models/Toilettes.class.php";
+	$mark = new Toilettes;
+	$mark2 = $mark->selectionToilettes($pdo);
 	global $twig;
-	echo $twig->render('index.html.twig', array('name' => 'Fabien'));
+	echo $twig->render('index.html.twig', array('mark2' => $mark2));
+	//var_dump($mark2);
 	
 });
 
