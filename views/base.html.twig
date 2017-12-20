@@ -88,15 +88,24 @@
 		}).addTo(mymap);
 			
 			var myIcon = L.icon({
-				iconUrl: 'http://localhost/PT/views/img/icone_geo.svg',
-				iconSize: [38, 95],
-				iconAnchor: [22, 94],
+				iconUrl: 'http://localhost/PT/views/img/icone_geo.png',
+				iconSize: [25, 47],
+				iconAnchor: [12.5, 46],
 				popupAnchor: [-3, -76],
 			});
-
+			
+			
 			 {% for v in mark2 %}
-			L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).addTo(mymap);
+			var marker = L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap);
 			 {% endfor %}
+			 
+			 var popup = L.popup();
+
+			function markerOnClick(e) {
+				document.location.href="description"
+			}
+
+			mymap.on('click', onMapClick);
 			
 			
 			

@@ -26,6 +26,13 @@ $router->map( 'GET', '/home', function() {
 	
 });
 
+$router->map( 'GET', '/description', function() {
+	
+		global $twig;
+	echo $twig->render('description.html.twig');
+	
+});
+
 
 $router->map( 'GET', '/form', function() {
 	
