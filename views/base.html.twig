@@ -19,8 +19,8 @@
 		<meta name="twitter:url" content="http://localhost/pootime/">
 		<meta name="twitter:description" content="Poop-time, l'appli qui vous sort de la merde!">
 		
-		<link type="text/css" rel="stylesheet" href="http://localhost/PT/views/css/materialize.min.css"  media="screen,projection"/>
-		<link rel="stylesheet" href="http://localhost/PT/views/css/leaflet.css" />
+		<link type="text/css" rel="stylesheet" href="http://localhost/PT/views/style/css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" href="http://localhost/PT/views/style/css/leaflet.css" />
 		<link rel="stylesheet" href="http://localhost/PT/views/css/style.css">
 		
 		 <style>
@@ -87,8 +87,15 @@
 			accessToken: 'pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ'
 		}).addTo(mymap);
 			
+			var myIcon = L.icon({
+				iconUrl: 'http://localhost/PT/views/img/icone_geo.svg',
+				iconSize: [38, 95],
+				iconAnchor: [22, 94],
+				popupAnchor: [-3, -76],
+			});
+
 			 {% for v in mark2 %}
-			L.marker([{{ v.latitude }}, {{ v.longitude }}]).addTo(mymap);
+			L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).addTo(mymap);
 			 {% endfor %}
 			
 			
