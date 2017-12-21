@@ -10,6 +10,19 @@
 	console.log(localStorage.getItem("lat"));
 	console.log(localStorage.getItem("lng"));
 
+	function test(){
+
+			var lat = localStorage.getItem("lat");
+			var lng = localStorage.getItem("lng");
+			console.log("lat" + lat);
+			var latitude = document.querySelector("#lat");
+			var longitude = document.querySelector("#lng");
+			latitude.value = lat;
+			longitude.value = lng;
+	}
+
+
+
 
 
 </script>
@@ -25,14 +38,14 @@
             <div class="">
                 <div class="form-group">
                     <label for="lat"></label>
-					<input type="hidden" name="lat" value="<script>localstorage.getItem('lat')</script>" class="form-control" id="lat">
+					<input type="hidden" name="lat" value="" class="form-control" id="lat">
                 </div>
             </div>
 
             <div class="">
                 <div class="form-group">
                     <label for="lng"></label>
-                    <input type="hidden" name="lng" value="<script>localstorage.getItem('lng')</script>" class="form-control" id="lng">
+                    <input type="hidden" name="lng" value="" class="form-control" id="lng">
                 </div>
             </div>
 
@@ -60,7 +73,7 @@
 
             <div class="">
                 <div class="form-group">
-                    <button type="submit" value="send" class="btn">Envoyer</button>
+                    <button type="submit" value="send" onclick="test()" class="btn">Envoyer</button>
                 </div>
             </div>
         </form>
