@@ -1,0 +1,10 @@
+body {
+  background-color: #F2CFAF; }
+
+nav {
+  background-color: #F2A866; }
+  nav .side-nav {
+    background-color: #F2A866;
+    z-index: 10000; }
+
+/*# sourceMappingURL=style.css.map */
