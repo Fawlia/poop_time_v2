@@ -3,7 +3,7 @@ require "./vendor/autoload.php";
 
 $router = new AltoRouter();
 
-$router->setBasePath('PT/');
+$router->setBasePath('poop_time_v2/');
 
 $loader = new Twig_Loader_Filesystem('views');
 
@@ -23,6 +23,13 @@ $router->map( 'GET', '/home', function() {
 	global $twig;
 	echo $twig->render('index.html.twig', array('mark2' => $mark2));
 	//var_dump($mark2);
+	
+});
+
+$router->map( 'GET', '/description', function() {
+	
+		global $twig;
+	echo $twig->render('description.html.twig');
 	
 });
 
@@ -60,9 +67,11 @@ $router->map( 'GET', '/contact', function() {
 
 $router->map( 'GET', '/insert', function() {
 	
-		require_once db_config.php;
+	/*require_once db_config.php;*/
 		global $twig;
 	echo $twig->render('insert.html.twig');
+	
+
 	
 });
 
