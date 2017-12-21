@@ -86,7 +86,7 @@ $router->map( 'GET', '/contact', function() {
 $router->map( 'GET', '/insert', function() {
 
 
-		require_once db_config.php;
+		require_once "db_config.php";
 		global $twig;
 	echo $twig->render('insert.html.twig');
 
