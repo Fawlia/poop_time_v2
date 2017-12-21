@@ -18,19 +18,13 @@
 		<meta name="twitter:title" content="Poop Time">
 		<meta name="twitter:url" content="http://localhost/poop_time_v2/">
 		<meta name="twitter:description" content="Poop-time, l'appli qui vous sort de la merde!">
-<<<<<<< HEAD
-		
-		<link type="text/css" rel="stylesheet" href="http://localhost/poop_time_v2/views/style/css/materialize.min.css"  media="screen,projection"/>
-		<link rel="stylesheet" href="http://localhost/poop_time_v2/views/style/css/leaflet.css" />
-		<link rel="stylesheet" href="http://localhost/poop_time_v2/views/css/style.css">
-		
-=======
+
 
 		<link type="text/css" rel="stylesheet" href="http://localhost/poop_time_v2/views/style/css/materialize.min.css"  media="screen,projection"/>
 		<link rel="stylesheet" href="http://localhost/poop_time_v2/views/style/css/leaflet.css" />
 		<link rel="stylesheet" href="http://localhost/poop_time_v2/views/css/style.css">
 
->>>>>>> e6d512515416c20c58ffb5aa01e735631966a681
+
 		 <style>
 		   #map {
 				height: 600px;
@@ -79,11 +73,7 @@
 				</div>
 			</div>
 		</footer>
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> e6d512515416c20c58ffb5aa01e735631966a681
 		<script type="text/javascript" src="http://localhost/poop_time_v2/views/js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="http://localhost/poop_time_v2/views/js/materialize.min.js"></script>
 		<script src="http://localhost/poop_time_v2/views/js/leaflet.js"></script>
@@ -105,37 +95,6 @@
 				iconAnchor: [12.5, 46],
 				popupAnchor: [-3, -76],
 			});
-<<<<<<< HEAD
-			
-			
-			 {% for v in mark2 %}
-			var marker = L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap);
-			 {% endfor %}
-			 
-			 var popup = L.popup();
-
-			function markerOnClick(e) {
-				document.location.href="description"
-			}
-
-			var popup = L.popup();
-
-			function onMapClick(e) {
-				
-				popup
-					.setLatLng(e.latlng)
-					.setContent("Voulez-voulez ajouter un nouveau toilette " + "<a href='http://localhost/poop_time_v2/insert'>ici</a> ?")
-					.openOn(mymap);
-				localStorage.setItem('lat', e.latlng.lat);
-				localStorage.setItem('lng', e.latlng.lng);
-			
-			}
-
-			mymap.on('click', onMapClick);
-			
-				
-			
-=======
 
 
 			 {% for v in mark2 %}
@@ -158,7 +117,6 @@
 
 
 
->>>>>>> e6d512515416c20c58ffb5aa01e735631966a681
 		</script>
 
 

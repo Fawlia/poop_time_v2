@@ -4,7 +4,7 @@ require "./vendor/autoload.php";
 $router = new AltoRouter();
 
 
-$router->setBasePath('poop_time_v2/');
+$router->setBasePath('poop_time_v2/index.php/');
 
 
 $loader = new Twig_Loader_Filesystem('views');
@@ -44,10 +44,10 @@ $router->map( 'GET', '/description/[i:id]', function($id) {
 });
 
 $router->map( 'GET', '/description', function() {
-	
+
 		global $twig;
 	echo $twig->render('description.html.twig');
-	
+
 });
 
 
