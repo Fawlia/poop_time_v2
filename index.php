@@ -24,17 +24,24 @@ $router->map( 'GET', '/home', function() {
 	$mark2 = $mark->selectionToilettes($pdo);
 	global $twig;
 	echo $twig->render('index.html.twig', array('mark2' => $mark2));
-	//var_dump($mark2);
+	//print_r($mark2);
 
 });
 
-$router->map( 'GET', '/description', function() {
+$router->map( 'GET', '/description/[i:id]', function($id) {
 
-		global $twig;
+  include_once "db_config.php";
+  include_once "./models/Toilettes.class.php";
+  $test = new Toilettes;
+  $test2['id'] = $test->selectVilleById($pdo, $id)[0][0];
+  $test2['user'] = $test->selectUserById($pdo, $id)[0][0];
+  $test2['infos'] = $test->selectInfoToiletteById($pdo, $id)[0];
+	global $twig;
 	echo $twig->render('description.html.twig');
-
+  print_r($test2);
 
 });
+
 
 
 $router->map( 'GET', '/form', function() {

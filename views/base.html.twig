@@ -96,16 +96,22 @@
 
 
 			 {% for v in mark2 %}
-			var marker = L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap);
+			 L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap)
+           .bindPopup("<h3 id='{{v.id}}'>" + "{{v.adresse}}" + "</h3>");
+
+
 			 {% endfor %}
 
 			 var popup = L.popup();
 
 			function markerOnClick(e) {
-				document.location.href="description"
+
+        var id = $(this._popup._content)[0].id;
+        document.location.href="description/" + id;
+        //console.log($(this._popup._content)[0].id);
 			}
 
-			mymap.on('click', onMapClick);
+			// mymap.on('click', onMapClick);
 
 
 
