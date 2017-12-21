@@ -3,13 +3,74 @@
 
 {% block title %}My cool blog posts{% endblock %}
 
+{% block home %}
+    class="active"
+{% endblock %}
+
+{% block home2 %}
+    class="active"
+{% endblock %}
+
 {% block body %}
-   
-      
-        
+
+
+
         <div id="map">
-        	
+
         </div>
-       
+
 
 {% endblock %}
+
+{%block home%}
+<script>
+
+var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.8);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  maxZoom: 18,
+  id: 'mapbox.streets',
+  accessToken: 'pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ'
+}).addTo(mymap);
+
+  var myIcon = L.icon({
+    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo.png',
+    iconSize: [25, 47],
+    iconAnchor: [12.5, 46],
+    popupAnchor: [-3, -76],
+  });
+
+
+   {% for v in mark2 %}
+   L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap)
+        .bindPopup("<h3 id='{{v.id}}'>" + "{{v.adresse}}" + "</h3>");
+
+
+   {% endfor %}
+
+   var popup = L.popup();
+
+  function markerOnClick(e) {
+
+    var id = $(this._popup._content)[0].id;
+    document.location.href="" + id;
+    //console.log($(this._popup._content)[0].id);
+  }
+
+
+  function onMapClick(e) {
+
+    popup
+    .setLatLng(e.latlng)
+    .setContent("Voulez-voulez ajouter un nouveau toilette " + "<a href='http://localhost/poop_time_v2/insert'>ici</a> ?")
+    .openOn(mymap);
+    localStorage.setItem('lat', e.latlng.lat);
+    localStorage.setItem('lng', e.latlng.lng);
+
+  }
+
+  mymap.on('click', onMapClick);
+
+
+</script>
+{%endblock%}

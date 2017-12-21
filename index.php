@@ -29,17 +29,28 @@ $router->map( 'GET', '/home', function() {
 
 });
 
-$router->map( 'GET', '/description/[i:id]', function($id) {
+$router->map( 'GET', '/[i:id]', function($id) {
 
   include_once "db_config.php";
+
   include_once "./models/Toilettes.class.php";
-  $test = new Toilettes;
-  $test2['id'] = $test->selectVilleById($pdo, $id)[0][0];
-  $test2['user'] = $test->selectUserById($pdo, $id)[0][0];
-  $test2['infos'] = $test->selectInfoToiletteById($pdo, $id)[0];
+  $toilette = new Toilettes;
+  $tabInfo['adresse'] = $toilette->selectInfoToiletteById($pdo, $id)[0][0];
+  $tabInfo['handicape'] = $toilette->selectInfoToiletteById($pdo, $id)[0][1];
+  $tabInfo['payant'] = $toilette->selectInfoToiletteById($pdo, $id)[0][2];
+  $tabInfo['description'] = $toilette->selectInfoToiletteById($pdo, $id)[0][3];
+  $tabInfo['type'] = $toilette->selectInfoToiletteById($pdo, $id)[0][4];
+
+  include_once "./models/Ville.class.php";
+  $ville = new Ville;
+  $tabInfo['ville'] = $ville->selectVilleById($pdo, $id)[0][0];
+
+  include_once "./models/Users.class.php";
+  $user = new Users;
+  $tabInfo['user'] = $user->selectUserById($pdo, $id)[0][0];
 	global $twig;
-	echo $twig->render('description.html.twig');
-  print_r($test2);
+	echo $twig->render('description.html.twig', array('tabInfo' => $tabInfo));
+  //print_r($tabInfo);
 
 });
 
@@ -86,7 +97,7 @@ $router->map( 'GET', '/contact', function() {
 $router->map( 'GET', '/insert', function() {
 
 
-		require_once db_config.php;
+		require_once "db_config.php";
 		global $twig;
 	echo $twig->render('insert.html.twig');
 
