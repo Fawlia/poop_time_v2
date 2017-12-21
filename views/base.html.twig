@@ -110,12 +110,18 @@
 
         var id = $(this._popup._content)[0].id;
         document.location.href="description/" + id;
-        //console.log($(this._popup._content)[0].id);
-			}
+      }
+      
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("Voulez-voulez ajouter un nouveau toilette " + "<a href='http://localhost/poop_time_v2/insert'>ici</a> ?")
+          .openOn(mymap);
+          localStorage.setItem('lat', e.latlng.lat);
+          localStorage.setItem('lng', e.latlng.lng);
+      }
 
-			// mymap.on('click', onMapClick);
-
-
+    mymap.on('click', onMapClick)
 
 		</script>
 

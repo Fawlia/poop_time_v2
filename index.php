@@ -4,7 +4,7 @@ require "./vendor/autoload.php";
 $router = new AltoRouter();
 
 
-$router->setBasePath('poop_time_v2/index.php/');
+$router->setBasePath('poop_time_v2/');
 
 
 $loader = new Twig_Loader_Filesystem('views');

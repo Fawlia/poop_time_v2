@@ -4,59 +4,48 @@
 
 {% block body %}
 
-<<<<<<< HEAD
 <script>
-	
+
 	console.log(localStorage.getItem("lat"));
 	console.log(localStorage.getItem("lng"));
-	
-	
-	
+
+
+
 </script>
-  
+
 <div class="container">
     <div class="row">
        <div class="s12 m12 l12 xl12">
         <form id="contact" action="http://localhost/poop_time_v2/models/insert.php" method="POST">
-           
-        
-            
-=======
-<div class="container">
-    <div class="row">
-       <div class="s12 m12 l12 xl12">
-        <form id="contact" action="http://localhost/poop_time_v2/models/contact.php" method="POST">
-
->>>>>>> e6d512515416c20c58ffb5aa01e735631966a681
             <div class="">
                 <div class="form-group">
                     <label for="lat"></label>
 					<input type="hidden" name="lat" value="<script>localstorage.getItem('lat')</script>" class="form-control" id="lat">
                 </div>
             </div>
-            
+
             <div class="">
                 <div class="form-group">
                     <label for="lng"></label>
                     <input type="hidden" name="lng" value="<script>localstorage.getItem('lng')</script>" class="form-control" id="lng">
                 </div>
             </div>
-            
+
              <div class="">
                 <div class="form-group">
                     <label for="ville">La ville</label>
                     <input type="text" name="ville" class="form-control" id="ville">
                 </div>
             </div>
-            
+
             <div class="">
                 <div class="form-group">
                     <label for="pseudo">Pseudo</label>
                     <input type="text" name="pseudo" class="form-control" id="pseudo">
                 </div>
             </div>
-            
-       
+
+
             <div class="">
                 <div class="form-group">
                     <label for="msg">Commentaire *</label>
