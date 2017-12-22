@@ -1,5 +1,5 @@
 
-{% extends 'base.html.twig' %}
+{% extends 'bhome.html.twig' %}
 
 {% block title %}My cool blog posts{% endblock %}
 
@@ -17,15 +17,20 @@
 
         <div id="map">
 
+          <div id="geoloc">
+            <div class="fixed-action-btn">
+              <a onclick="geoLoc()" class="btn-floating btn-large red"><i class="material-icons">my_location</i></a>
+              <a class="btn-floating btn-large yellow darken-1"><i class="material-icons">search</i></a>
+            </div>
+          </div>
         </div>
-
 
 {% endblock %}
 
 {%block home3%}
 <script>
 
-var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.8);
+var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.45);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   maxZoom: 18,
@@ -34,7 +39,21 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
   var myIcon = L.icon({
-    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo.png',
+    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo.svg',
+    iconSize: [25, 47],
+    iconAnchor: [12.5, 46],
+    popupAnchor: [-3, -76],
+  });
+
+  var myIcon1 = L.icon({
+    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo1.svg',
+    iconSize: [25, 47],
+    iconAnchor: [12.5, 46],
+    popupAnchor: [-3, -76],
+  });
+
+  var myIcon2 = L.icon({
+    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo2.png',
     iconSize: [25, 47],
     iconAnchor: [12.5, 46],
     popupAnchor: [-3, -76],
@@ -42,10 +61,16 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
    {% for v in mark2 %}
-   L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap)
-        .bindPopup("<h3 id='{{v.id}}'>" + "{{v.adresse}}" + "</h3>");
+   {% if v.ville_id == 8 %}
+ L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon1}).on('click', markerOnClick).addTo(mymap)
+ .bindPopup("<h6 data='{{v.longitude}}' datalat='{{v.latitude}}' id='{{v.id}}'>" + "{{v.adresse}}" + "</h6>");
 
+ {% else %}
 
+ L.marker([{{ v.latitude }}, {{ v.longitude }}], {icon: myIcon}).on('click', markerOnClick).addTo(mymap)
+ .bindPopup("<h6 data='{{v.longitude}}' datalat='{{v.latitude}}' id='{{v.id}}'>" + "{{v.adresse}}" + "</h6>");
+
+ {% endif %}
    {% endfor %}
 
    var popup = L.popup();
@@ -71,6 +96,27 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
   mymap.on('click', onMapClick);
 
+  function geoLoc(){
+
+    function onAccuratePositionFound (e) {
+      localStorage.setItem('curlat', e.latlng.lat);
+      localStorage.setItem('curlng', e.latlng.lng);
+      mymap.setView(e.latlng, 12);
+      L.marker(e.latlng,{icon: myIcon1}).addTo(mymap);
+
+    }
+
+    function onAccuratePositionError (e) {
+      console.log(e.message)
+    }
+
+    mymap.on('accuratepositionfound', onAccuratePositionFound);
+    mymap.on('accuratepositionerror', onAccuratePositionError);
+    mymap.findAccuratePosition({
+    maxWait: 1000,
+    desiredAccuracy: 30
+    });
+  }
 
 </script>
 {%endblock%}

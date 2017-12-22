@@ -1,5 +1,5 @@
 $color1: #FFFFFF;
-$color2: #F2A866;
+$color2: #2a84be;
 $color_action: #F2CFAF;
 
 html, body{
@@ -9,29 +9,66 @@ html, body{
   height: 100%;
 }
 
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
+  position: absolute;
+  top: 80px;
+}
+
 main{
   height: 100%;
   width: 100%;
   #map{
     height: 100%;
     width: 100%;
+    overflow: hidden;
   }
 }
 
-nav{
-  background-color: $color2;
-  .nav-wrapper{
-    .brand-logo{
-      #logo_medium{
-        padding-top: 3px;
+#accueil{
+  z-index: 10000;
+  position: absolute;
+  nav{
+    background-color: $color2;
+    li{
+      a{
+        height: 56px;
+        line-height: 56px;
+      }
+    }
+    .nav-wrapper{
+      .brand-logo{
+        #logo_medium{
+          padding-top: 3px;
+        }
+      }
+    }
+    .side-nav{
+      background-color: $color2;
+      z-index: 10000;
+      .active{
+        background-color: $color_action;
       }
     }
   }
-  .side-nav{
+}
+
+#base_nav{
+  z-index: 10000;
+  #base{
     background-color: $color2;
-    z-index: 10000;
-    .active{
-      background-color: $color_action;
+    .nav-wrapper{
+      .brand-logo{
+        #logo_medium{
+          padding-top: 3px;
+        }
+      }
+    }
+    .side-nav{
+      background-color: $color2;
+      z-index: 10000;
+      .active{
+        background-color: $color_action;
+      }
     }
   }
 }

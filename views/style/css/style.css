@@ -4,21 +4,44 @@ html, body {
   margin: 0px;
   height: 100%; }
 
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  position: absolute;
+  top: 80px; }
+
 main {
   height: 100%;
   width: 100%; }
   main #map {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
 
-nav {
-  background-color: #F2A866; }
-  nav .nav-wrapper .brand-logo #logo_medium {
-    padding-top: 3px; }
-  nav .side-nav {
-    background-color: #F2A866;
-    z-index: 10000; }
-    nav .side-nav .active {
-      background-color: #F2CFAF; }
+#accueil {
+  z-index: 10000;
+  position: absolute; }
+  #accueil nav {
+    background-color: #2a84be; }
+    #accueil nav li a {
+      height: 56px;
+      line-height: 56px; }
+    #accueil nav .nav-wrapper .brand-logo #logo_medium {
+      padding-top: 3px; }
+    #accueil nav .side-nav {
+      background-color: #2a84be;
+      z-index: 10000; }
+      #accueil nav .side-nav .active {
+        background-color: #F2CFAF; }
+
+#base_nav {
+  z-index: 10000; }
+  #base_nav #base {
+    background-color: #2a84be; }
+    #base_nav #base .nav-wrapper .brand-logo #logo_medium {
+      padding-top: 3px; }
+    #base_nav #base .side-nav {
+      background-color: #2a84be;
+      z-index: 10000; }
+      #base_nav #base .side-nav .active {
+        background-color: #F2CFAF; }
 
 /*# sourceMappingURL=style.css.map */
