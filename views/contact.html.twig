@@ -6,51 +6,44 @@
 {% block body %}
    <div class="container">
     <div class="row">
-       <div class="s12 m12 l12 xl12">
+       
         <form id="contact" action="http://localhost/poop_time_v2/models/contact.php" method="POST">
 
-            <div class="">
+            <div class="s12 m12 l4 xl4">
                 <div class="form-group">
-                    <label for="pseudo">Votre pseudo *</label>
+                    <label for="pseudo"></label>
                     <input type="text" name="pseudo"  class="form-control" placeholder="Votre pseudo" id="pseudo">
                 </div>
             </div>
 
-            <div class="">
+            <div class="s12 m12 l4 xl4">
                 <div class="form-group">
-                    <label for="email">E-mail *</label>
+                    <label for="email"></label>
                     <input type="text" name="email" class="form-control" id="email" placeholder="Votre e-mail">
                 </div>
             </div>
 
-            <div class="">
+            <div class="s12 m12 l4 xl4">
                 <div class="form-group">
-                    <label for="ville">Ville *</label>
+                    <label for="ville"></label>
                     <input type="text" name="ville" class="form-control" placeholder="Le nom de votre ville" id="ville">
                 </div>
             </div>
 
-            <div class="">
+            <div class="s12 m12 l12 xl12">
                 <div class="form-group">
-                    <label for="cp">Code Postal *</label>
-                    <input type="text" name="cp" class="form-control" placeholder="Le code postal de votre ville" id="cp">
-                </div>
-            </div>
-
-            <div class="">
-                <div class="form-group">
-                    <label for="msg">Message *</label>
+                    <label for="msg"></label>
                     <textarea name="msg" class="form-control" id="msg"  placeholder="Ecrivez votre message"></textarea>
                 </div>
             </div>
 
-            <div class="">
+            <div class="s12 m12 l4 xl4">
                 <div class="form-group">
                     <button type="submit" value="send" class="btn">Envoyer</button>
                 </div>
             </div>
         </form>
-        </div>
+       
     </div>
 </div>
 

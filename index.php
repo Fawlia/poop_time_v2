@@ -2,20 +2,25 @@
 require "./vendor/autoload.php";
 
 $router = new AltoRouter();
-
-
 $router->setBasePath('poop_time_v2/');
-
-
 $loader = new Twig_Loader_Filesystem('views');
-
-
 $twig = new Twig_Environment($loader, array(
     'cache' => false,
     'debug' => true
 ));
 
 // map homepage
+
+$router->map('GET', '/index.php',function(){
+	header('Location: http://localhost/poop_time_v2/home');
+	
+});
+
+$router->map('GET', '/',function(){
+	header('Location: http://localhost/poop_time_v2/home');
+	
+});
+
 
 $router->map( 'GET', '/home', function() {
 
@@ -31,26 +36,26 @@ $router->map( 'GET', '/home', function() {
 
 $router->map( 'GET', '/[i:id]', function($id) {
 
-  include_once "db_config.php";
+	  include_once "db_config.php";
 
-  include_once "./models/Toilettes.class.php";
-  $toilette = new Toilettes;
-  $tabInfo['adresse'] = $toilette->selectInfoToiletteById($pdo, $id)[0][0];
-  $tabInfo['handicape'] = $toilette->selectInfoToiletteById($pdo, $id)[0][1];
-  $tabInfo['payant'] = $toilette->selectInfoToiletteById($pdo, $id)[0][2];
-  $tabInfo['description'] = $toilette->selectInfoToiletteById($pdo, $id)[0][3];
-  $tabInfo['type'] = $toilette->selectInfoToiletteById($pdo, $id)[0][4];
+	  include_once "./models/Toilettes.class.php";
+	  $toilette = new Toilettes;
+	  $tabInfo['adresse'] = $toilette->selectInfoToiletteById($pdo, $id)[0][0];
+	  $tabInfo['handicape'] = $toilette->selectInfoToiletteById($pdo, $id)[0][1];
+	  $tabInfo['payant'] = $toilette->selectInfoToiletteById($pdo, $id)[0][2];
+	  $tabInfo['description'] = $toilette->selectInfoToiletteById($pdo, $id)[0][3];
+	  $tabInfo['type'] = $toilette->selectInfoToiletteById($pdo, $id)[0][4];
 
-  include_once "./models/Ville.class.php";
-  $ville = new Ville;
-  $tabInfo['ville'] = $ville->selectVilleById($pdo, $id)[0][0];
+	  include_once "./models/Ville.class.php";
+	  $ville = new Ville;
+	  $tabInfo['ville'] = $ville->selectVilleById($pdo, $id)[0][0];
 
-  include_once "./models/Users.class.php";
-  $user = new Users;
-  $tabInfo['user'] = $user->selectUserById($pdo, $id)[0][0];
-	global $twig;
-	echo $twig->render('description.html.twig', array('tabInfo' => $tabInfo));
-  //print_r($tabInfo);
+	  include_once "./models/Users.class.php";
+	  $user = new Users;
+	  $tabInfo['user'] = $user->selectUserById($pdo, $id)[0][0];
+		global $twig;
+		echo $twig->render('description.html.twig', array('tabInfo' => $tabInfo));
+	  //print_r($tabInfo);
 
 });
 

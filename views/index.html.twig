@@ -87,7 +87,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
     popup
     .setLatLng(e.latlng)
-    .setContent("Voulez-voulez ajouter un nouveau toilette " + "<a href='http://localhost/poop_time_v2/insert'>ici</a> ?")
+    .setContent("<a href='http://localhost/poop_time_v2/insert'><button id='btnP' class='btn-large'>Proposez un toilette</button></a>")
     .openOn(mymap);
     localStorage.setItem('lat', e.latlng.lat);
     localStorage.setItem('lng', e.latlng.lng);

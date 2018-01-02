@@ -1,7 +1,7 @@
 <?php
 
-$pseudo = $cp = $ville = $msg = $email = "";
-$nomError = $prenomError = $cpError = $villeError = $msgError = $emailError = "";
+$pseudo= $ville = $msg = $email = "";
+$pseudoError = $villeError = $msgError = $emailError = "";
 
 
 if (isset($_POST["pseudo"])){
@@ -33,22 +33,6 @@ if (isset($_POST["ville"])){
 		
 }
 
-if (isset($_POST["cp"])){
-	
-	$cp = $_POST["cp"];
-	
-	if(empty($_POST["cp"]) || strlen($_POST["cp"]) < 5 || strlen($_POST["cp"]) > 5 || is_nan($_POST["cp"]))
-			{
-			echo "Veuillez rentrer un code postal valide";
-			$cpError = true;
-			}
-	
-	else{
-	echo $cp;
-	}
-		
-		
-}
 
 if (isset($_POST["email"])){
 	
@@ -80,7 +64,7 @@ if (isset($_POST["msg"])){
 		
 }
 
-if ($nomError == true || $prenomError == true || $cpError == true || $villeError == true || $msgError == true || $emailError == true)
+if ($pseudoError == true $villeError == true || $msgError == true || $emailError == true)
 
 {
 	
@@ -89,7 +73,7 @@ if ($nomError == true || $prenomError == true || $cpError == true || $villeError
 }
 
 else {
-	$message = " Prénom ".$pseudo." Ville ".$ville." Code Postal ".$cp." E-mail ".$email." Message : ".$msg;
+	$message = " Pseudo ".$pseudo." Ville ".$ville." E-mail ".$email." Message : ".$msg;
 
 	mail("yohann.thorez@gmail.com", "Envoi du formulaire", $message);
 }
