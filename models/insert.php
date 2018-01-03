@@ -44,7 +44,7 @@ if($han != '' && $pay != '' && $msg != '' && $pseudo != '' && $adresse != '' && 
 
 
 
-	$servername = "192.168.2.76";
+	$servername = "localhost";
 	$username = "root";
 	$password = "ubuntu";
 

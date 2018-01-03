@@ -90,7 +90,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/t
 
     popup
     .setLatLng(e.latlng)
-    .setContent("<a href='http://192.168.2.76/poop_time_v2/insert'><button id='btnP' class='btn-large'>Proposez un toilette</button></a>")
+    .setContent("<a href='http://192.168.2.76/poop_time_v2/index.php/insert'><button id='btnP' class='btn-large'>Proposez un toilette</button></a>")
     .openOn(mymap);
     localStorage.setItem('lat', e.latlng.lat);
     localStorage.setItem('lng', e.latlng.lng);
