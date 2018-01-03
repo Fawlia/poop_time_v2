@@ -1,38 +1,52 @@
 <?php
 
-$pseudo = $cp = $ville = $msg = $email = "";
-$nomError = $prenomError = $cpError = $villeError = $msgError = $emailError = "";
+if (isset($_REQUEST['pseudo'])){
 
+	if(!empty($_REQUEST['pseudo'])){
 
-
-
-if (isset($_POST["msg"])){
-
-	$msg = $_POST["msg"];
-
-	if(empty($_POST["msg"]) || strlen($_POST["msg"]) < 16 )
-			{
-			echo "Veuillez rentrer un message plus long valide";
-			$msgError = true;
-			}
-	else {
+		$pseudo = $_REQUEST['pseudo'];
 
 	}
-
 }
 
-if ($msgError == true)
+if (isset($_REQUEST['adresse'])){
 
-{
+	if(!empty($_REQUEST['adresse'])){
 
-	echo "IL Y A QUELQUE CHOSE DE POURRI DANS CE FORMULAIRE";
+		$adresse = $_REQUEST['adresse'];
 
+	}
 }
 
-else {
+if (isset($_REQUEST['ville'])){
+
+	if(!empty($_REQUEST['ville'])){
+
+		$ville = $_REQUEST['ville'];
+
+	}
+}
+if (isset($_REQUEST['msg'])){
+
+	if(!empty($_REQUEST['msg'])){
+
+		$msg = $_REQUEST['msg'];
+
+	}
+}
+
+$han = $_REQUEST['han'];
+$pay = $_REQUEST['pay'];
+$lat = $_REQUEST['lat'];
+$lng = $_REQUEST['lng'];
+
+if($han != '' && $pay != '' && $msg != '' && $pseudo != '' && $adresse != '' && $ville != ''){
+
+
+
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "ubuntu";
 
 	try {
 		$options = array(
@@ -51,45 +65,39 @@ else {
 
 	// INSERTION DE LA VILLE DANS LA TABLE VILLE
 	$stmt = $pdo->prepare("INSERT INTO ville (nom_ville) VALUES (:ville)");
-	$stmt->bindParam(':ville', $_POST["ville"]);
+	$stmt->bindParam(':ville', $ville);
 	$result = $stmt->execute();
 
 
 	// INSERTION DU PSEUDO DANS LA TABLE USERS
 	$stmt1 = $pdo->prepare("INSERT INTO users (pseudo) VALUES (:pseudo)");
-	$stmt1->bindParam(':pseudo', $_POST["pseudo"]);
+	$stmt1->bindParam(':pseudo', $pseudo);
 	$result1 = $stmt1->execute();
 
 
 	// SELECTION DE L'ID DU PSEUDO DANS LA TABLE USERS
-	$stmt3 = $pdo->prepare("SELECT id FROM users WHERE users.pseudo = '".$_POST['pseudo']."'");
+	$stmt3 = $pdo->prepare("SELECT id FROM users WHERE users.pseudo = '".$pseudo."'");
 	$stmt3->execute();
 	$result2 = $stmt3->fetchAll();
-	echo($result2[0][0]."<br>");
 
 
 	// SELECTION DE L'ID DE LA VILLE DANS LA TABLE VILLE
-	$stmt4 = $pdo->prepare("SELECT id FROM ville WHERE ville.nom_ville='".$_POST['ville']."' ");
+	$stmt4 = $pdo->prepare("SELECT id FROM ville WHERE ville.nom_ville='".$ville."' ");
 	$stmt4->execute();
 	$result3 = $stmt4->fetchAll();
-	echo($result3[0][0]."<br>");
 
-// print_r($_POST);
+//print_r($_REQUEST);
 
 	// INSERTION D'UN NOUVEAU TOILETTE DANS LA TABLE TOILETTE
-	$stmt5 = $pdo->prepare("INSERT INTO toilettes (latitude, longitude, description, ville_id, users_id)
-		VALUES (".$_POST["lat"].", ".$_POST["lng"].", '".$_POST["msg"]."', ".$result3[0][0].", ".$result2[0][0]." )");
+	$stmt5 = $pdo->prepare("INSERT INTO toilettes (latitude, longitude, adresse, handicape, payant, description, ville_id, users_id)
+			VALUES (".$lat.", ".$lng.", '".$adresse."' , ".$han." , ".$pay.", '".$msg."', ".$result3[0][0].", ".$result2[0][0]." )");
 
-		//$stmt5->bindParam(':lat', $_POST["lat"]);
-		//$stmt5->bindParam(':lng', $_POST["lng"]);
-		//$stmt5->bindParam(':msg', $_POST["msg"]);
-		//$stmt5->bindParam($result2[0][0], );
-		//$stmt5->bindParam($result3[0][0], );
+
 
 		$result4 = $stmt5->execute();
 
 
 }
-
+//, adresse, handicape, payant, description
 
 ?>

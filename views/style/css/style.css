@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Ubuntu-Bold';
   src: url("../fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype"); }
@@ -6,15 +7,22 @@
   src: url("../fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"); }
 html, body {
   background-color: #FFFFFF;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   height: 100%; }
+  html main, body main {
+    flex: 1 0 auto; }
   html #histoire h2, body #histoire h2 {
     font-family: "Ubuntu-Regular", sans-serif;
     font-size: 2em; }
   html #histoire p, body #histoire p {
     font-family: "Ubuntu-Regular", sans-serif;
     font-size: 1em; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
 
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
   position: absolute;
@@ -79,11 +87,15 @@ html, body {
       #base_nav #base .side-nav .active {
         background-color: #5A7684; }
 
-.fixed-action-btn {
-  bottom: 93px; }
-
 .btn-floating.btn-large {
-  background-color: #222222; }
+  background-color: #C40000; }
+
+hr {
+  width: 75%;
+  height: 2px;
+  background-color: #222222;
+  border: none;
+  /*on supprime le style par défaut*/ }
 
 #btnP {
   font-family: "Ubuntu-Regular", sans-serif;
@@ -103,5 +115,17 @@ html, body {
   bottom: 0;
   background-color: #222222;
   font-family: "Ubuntu-Regular", sans-serif; }
+
+#base2 {
+  background-color: #222222;
+  font-family: "Ubuntu-Regular", sans-serif;
+  bottom: 0; }
+
+#bio {
+  margin-top: 50px; }
+
+@media screen and (min-width: 800px) {
+  .fixed-action-btn {
+    bottom: 93px; } }
 
 /*# sourceMappingURL=style.css.map */
