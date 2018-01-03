@@ -10,10 +10,37 @@
       <div class="row">
 
       </div>
-      <div class="row">
-        {% for v in tabInfo %}
-          <p> {{v}}</p>
-        {% endfor %}
+      <div id='desc' class="row">
+        <p><i class="medium material-icons">home</i> Adresse : {{ tabInfo['adresse'] }}</p>
+
+        {% if tabInfo['handicape'] == 0 %}
+          <p><i class="medium material-icons">accessible</i> Handicapé : Non</p>
+        {% else %}
+          <p><i class="medium material-icons">accessible</i> Handicapé : Oui</p>
+        {% endif %}
+
+        {% if tabInfo['payant'] == 0 %}
+          <p><i class="medium material-icons">euro_symbol</i> Payant : Non</p>
+        {% else %}
+          <p><i class="medium material-icons">euro_symbol</i> Payant : Oui</p>
+        {% endif %}
+
+        {% if tabInfo['description']%}
+          <p><i class="medium material-icons">description</i> Description : {{ tabInfo['description'] }}</p>
+        {% endif %}
+
+        {% if tabInfo['type'] %}
+          <p><i class="medium material-icons">info</i> Type : {{ tabInfo['type'] }}</p>
+        {% endif %}
+
+        {% if tabInfo['ville'] != 'Autoroute'%}
+          <p>Ville : {{ tabInfo['ville'] }}</p>
+        {% endif %}
+
+        {% if tabInfo['user'] != 'admin' %}
+          <p>Ajouté par : {{ tabInfo['user'] }}</p>
+        {% endif %}
+
       </div>
     </div>
   </div>

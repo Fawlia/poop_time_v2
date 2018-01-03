@@ -24,6 +24,17 @@ class Toilettes {
 
 	}
 
+	public function insertInfoIntoToilette($pdo, $infos){
+
+		$stmt = $pdo->prepare("INSERT INTO toilettes (latitude, longitude, adresse, handicape, payant, description, ville_id, users_id)
+				VALUES (".$infos['lat'].", ".$infos['lng'].", '".$infos['adresse']."' , ".$infos['han']." , ".$infos['pay'].", '".$infos['msg']."', ".$infos['ville_id'].", ".$infos['users_id']." )");
+		$stmt->execute();
+
+
+
+
+	}
+
 
 }
 
