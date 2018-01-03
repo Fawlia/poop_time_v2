@@ -19,8 +19,8 @@
 
           <div id="geoloc">
             <div class="fixed-action-btn">
-              <a onclick="geoLoc()" class="btn-floating btn-large red"><i class="material-icons">my_location</i></a>
-              <a class="btn-floating btn-large yellow darken-1"><i class="material-icons">search</i></a>
+              <a onclick="geoLoc()" class="btn-floating btn-large"><i class="material-icons">my_location</i></a>
+              <a class="btn-floating btn-large"><i class="material-icons">search</i></a>
             </div>
           </div>
         </div>
@@ -29,10 +29,14 @@
 
 {%block home3%}
 <script>
+	
+	$( document ).ready(function() {
+ 	geoLoc();
+});
 
 var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.45);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbxt7od3ehau2qs2x79ef78m/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ', {
   maxZoom: 18,
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ'
@@ -101,7 +105,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     function onAccuratePositionFound (e) {
       localStorage.setItem('curlat', e.latlng.lat);
       localStorage.setItem('curlng', e.latlng.lng);
-      mymap.setView(e.latlng, 12);
+      mymap.setView(e.latlng, 14);
       L.marker(e.latlng,{icon: myIcon1}).addTo(mymap);
 
     }

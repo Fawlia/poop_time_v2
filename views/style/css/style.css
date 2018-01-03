@@ -1,48 +1,86 @@
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  src: url("../fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url("../fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"); }
 html, body {
   background-color: #FFFFFF;
   padding: 0px;
   margin: 0px;
   height: 100%; }
+  html #histoire h2, body #histoire h2 {
+    font-family: "Ubuntu-Regular", sans-serif;
+    font-size: 2em; }
+  html #histoire p, body #histoire p {
+    font-family: "Ubuntu-Regular", sans-serif;
+    font-size: 1em; }
 
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
   position: absolute;
   top: 80px; }
 
-main {
+.mappy {
   height: 100%;
   width: 100%; }
-  main #map {
+  .mappy #map {
     height: 100%;
     width: 100%;
     overflow: hidden; }
 
 #accueil {
   z-index: 10000;
-  position: absolute; }
+  position: absolute;
+  font-family: "Ubuntu-Regular", sans-serif; }
   #accueil nav {
-    background-color: #2a84be; }
-    #accueil nav li a {
-      height: 56px;
-      line-height: 56px; }
+    background-color: #222222; }
+    #accueil nav .active {
+      background-color: #5A7684; }
+    #accueil nav li a:hover {
+      background-color: rgba(90, 118, 132, 0.4); }
+    #accueil nav .nav-wrapper .brand-logo svg text {
+      font-family: "Ubuntu-Bold", sans-serif;
+      font-size: 3em; }
     #accueil nav .nav-wrapper .brand-logo #logo_medium {
       padding-top: 3px; }
     #accueil nav .side-nav {
-      background-color: #2a84be;
+      background-color: #222222;
       z-index: 10000; }
+      #accueil nav .side-nav li a {
+        color: #FFFFFF;
+        height: 56px;
+        line-height: 56px;
+        font-size: 1.3em; }
       #accueil nav .side-nav .active {
-        background-color: #F2CFAF; }
+        background-color: #5A7684; }
 
 #base_nav {
-  z-index: 10000; }
+  z-index: 10000;
+  font-family: "Ubuntu-Regular", sans-serif; }
   #base_nav #base {
-    background-color: #2a84be; }
+    background-color: #222222; }
+    #base_nav #base .active {
+      background-color: #5A7684; }
+    #base_nav #base li a:hover {
+      background-color: rgba(90, 118, 132, 0.4); }
+    #base_nav #base .nav-wrapper .brand-logo svg text {
+      font-family: "Ubuntu-Bold", sans-serif;
+      font-size: 3em; }
     #base_nav #base .nav-wrapper .brand-logo #logo_medium {
       padding-top: 3px; }
     #base_nav #base .side-nav {
-      background-color: #2a84be;
+      background-color: #222222;
       z-index: 10000; }
+      #base_nav #base .side-nav li a {
+        color: #FFFFFF;
+        height: 56px;
+        line-height: 56px;
+        font-size: 1.3em; }
       #base_nav #base .side-nav .active {
-        background-color: #F2CFAF; }
+        background-color: #5A7684; }
+
+.btn-floating.btn-large {
+  background-color: #222222; }
 
 #citations {
   font-size: 25px;
