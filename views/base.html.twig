@@ -10,13 +10,13 @@
 
 		<meta property="og:title" content="Poop Time"/>
 		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://localhost/poop_time_v2/"/>
+		<meta property="og:url" content="http://192.168.2.76/poop_time_v2/"/>
 		<meta property="og:description" content="Poop-time, l'appli qui vous sort de la merde!"/>
 		<meta property="og:site_name" content="Poop Time"/>
 
 		<meta name="twitter:card" content="summary"/>
 		<meta name="twitter:title" content="Poop Time">
-		<meta name="twitter:url" content="http://localhost/poop_time_v2/">
+		<meta name="twitter:url" content="http://192.168.2.76/poop_time_v2/">
 		<meta name="twitter:description" content="Poop-time, l'appli qui vous sort de la merde!">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -87,16 +87,14 @@
     					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
       						<li {% block home %} {% endblock %} id="home"><a href="home">Accueil</a></li>
-                  <li {% block history %} {% endblock %} id="history"><a href="history">Histoire</a></li>
-      						<li {% block top_ten %} {% endblock %} id="top_ten"><a href="top_ten">Top 10</a></li>
-                  <li {% block contact %} {% endblock %} id="contact"><a href="contact">Contact</a></li>
+    						  <li {% block history %} {% endblock %} id="history"><a href="history">Histoire</a></li>
+    						  <li {% block contact %} {% endblock %} id="contact"><a href="contact">Contact</a></li>
       						<li {% block apropos %} {% endblock %} id="apropos"><a href="apropos">A Propos</a></li>
       					</ul>
       					<ul class="side-nav" id="mobile-demo">
       						<li {% block home2 %} {% endblock %} id="home"><a href="home">Accueil</a></li>
                   <li {% block history2 %} {% endblock %} id="history"><a href="history">Histoire</a></li>
-      						<li {% block top_ten2 %} {% endblock %} id="top_ten"><a href="top_ten">Top 10</a></li>
-      						<li {% block fun_facts2 %} {% endblock %} id="fun_facts"><a href="fun_facts">Fun Facts</a></li>
+  				        <li {% block fun_facts2 %} {% endblock %} id="fun_facts"><a href="fun_facts">Fun Facts</a></li>
                   <li {% block contact2 %} {% endblock %} id="contact"><a href="contact">Contact</a></li>
       						<li {% block apropos2 %} {% endblock %} id="apropos"><a href="apropos">A Propos</a></li>
       					</ul>
