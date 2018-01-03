@@ -62,8 +62,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/t
 
   var myIcon2 = L.icon({
     iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo2.svg',
-    iconSize: [25, 47],
-    iconAnchor: [12.5, 46],
+    iconSize: [35, 57],
+    iconAnchor: [22.5, 56],
     popupAnchor: [-3, -76],
   });
 
@@ -109,7 +109,9 @@ L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/t
     function onAccuratePositionFound (e) {
       localStorage.setItem('curlat', e.latlng.lat);
       localStorage.setItem('curlng', e.latlng.lng);
-      mymap.setView(e.latlng, 14);
+
+      mymap.setView(e.latlng, 16);
+
       L.marker(e.latlng,{icon: myIcon2}).addTo(mymap);
 
     }
