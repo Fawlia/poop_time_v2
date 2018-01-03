@@ -79,14 +79,29 @@ html, body {
       #base_nav #base .side-nav .active {
         background-color: #5A7684; }
 
+.fixed-action-btn {
+  bottom: 93px; }
+
 .btn-floating.btn-large {
   background-color: #222222; }
 
-.btn-large {
+#btnP {
+  font-family: "Ubuntu-Regular", sans-serif;
   background-color: #222222; }
+  #btnP:hover {
+    background-color: rgba(90, 118, 132, 0.4);
+    color: #222222; }
 
 #citations {
   font-size: 25px;
   font-weight: bold; }
+
+#accueil2 {
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #222222;
+  font-family: "Ubuntu-Regular", sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

@@ -135,15 +135,33 @@ html, body{
   }
 }
 
+.fixed-action-btn{
+  bottom: 93px;
+}
+
 .btn-floating.btn-large{
     background-color: $color2;
 }
 
-.btn-large{
+#btnP{
+  font-family: $font_all;
   background-color: $color2;
+  &:hover{
+    background-color: rgba($color_action, 0.4);
+    color: $color2;
+  }
 }
 
 #citations{
   font-size: 25px;
   font-weight: bold;
+}
+
+#accueil2{
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: $color2;
+  font-family: $font_all;
 }
