@@ -16,10 +16,9 @@
 
 
         <div id="map">
-
           <div id="geoloc">
             <div class="fixed-action-btn">
-              <a onclick="geoLoc()" class="btn-floating btn-large"><i class="material-icons">my_location</i></a>
+              <a onclick="geoLoc()"><button class="btn-floating btn-large"><i class="material-icons">my_location</i></button></a>
               <a class="btn-floating btn-large"><i class="material-icons">search</i></a>
             </div>
           </div>
@@ -102,7 +101,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
       localStorage.setItem('curlat', e.latlng.lat);
       localStorage.setItem('curlng', e.latlng.lng);
       mymap.setView(e.latlng, 12);
-      L.marker(e.latlng,{icon: myIcon1}).addTo(mymap);
+      L.marker(e.latlng,{icon: myIcon2}).addTo(mymap);
 
     }
 
