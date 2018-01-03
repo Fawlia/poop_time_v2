@@ -2,7 +2,7 @@
 require "./vendor/autoload.php";
 
 $router = new AltoRouter();
-$router->setBasePath('poop_time_v2/');
+$router->setBasePath('poop_time_v2/index.php/');
 $loader = new Twig_Loader_Filesystem('views');
 $twig = new Twig_Environment($loader, array(
     'cache' => false,
@@ -13,12 +13,12 @@ $twig = new Twig_Environment($loader, array(
 
 $router->map('GET', '/index.php',function(){
 	header('Location: http://localhost/poop_time_v2/home');
-	
+
 });
 
 $router->map('GET', '/',function(){
 	header('Location: http://localhost/poop_time_v2/home');
-	
+
 });
 
 
