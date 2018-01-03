@@ -11,7 +11,6 @@
 
       </div>
       <div id='desc' class="row">
-<<<<<<< HEAD
         <p><i class="medium material-icons">home</i> Adresse : {{ tabInfo['adresse'] }}</p>
 
         {% if tabInfo['handicape'] == 0 %}
@@ -32,36 +31,14 @@
 
         {% if tabInfo['type'] %}
           <p><i class="medium material-icons">info</i> Type : {{ tabInfo['type'] }}</p>
-=======
-        <p>Adresse : {{ tabInfo['adresse'] }}</p>
-
-        {% if tabInfo['handicape'] == 0 %}
-          <p>Handicapé : Non</p>
-        {% else %}
-          <p>Handicapé : Oui</p>
-        {% endif %}
-
-        {% if tabInfo['payant'] == 0 %}
-          <p>Payant : Non</p>
-        {% else %}
-          <p>Payant : Oui</p>
-        {% endif %}
-
-        {% if tabInfo['description']%}
-          <p>Description : {{ tabInfo['description'] }}</p>
-        {% endif %}
-
-        {% if tabInfo['type'] %}
-          <p>Type : {{ tabInfo['type'] }}</p>
->>>>>>> 6bf52d09f8ab7f4f679c5e13e99aba2ccc808fbc
         {% endif %}
 
         {% if tabInfo['ville'] != 'Autoroute'%}
-          <p>Ville : {{ tabInfo['ville'] }}</p>
+          <p><i class="medium material-icons">location_city</i>Ville : {{ tabInfo['ville'] }}</p>
         {% endif %}
 
         {% if tabInfo['user'] != 'admin' %}
-          <p>Ajouté par : {{ tabInfo['user'] }}</p>
+          <p><i class="medium material-icons">person</i>Ajouté par : {{ tabInfo['user'] }}</p>
         {% endif %}
 
       </div>

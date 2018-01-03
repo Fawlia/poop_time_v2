@@ -28,9 +28,12 @@ $router->map( 'GET', '/home', function() {
 	include_once "./models/Toilettes.class.php";
 	$mark = new Toilettes;
 	$mark2 = $mark->selectionToilettes($pdo);
+  //print_r($mark2);
 	global $twig;
 	echo $twig->render('index.html.twig', array('mark2' => $mark2));
-	//print_r($mark2);
+  echo 'toto';
+
+
 
 });
 
