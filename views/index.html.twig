@@ -19,7 +19,7 @@
           <div id="geoloc">
             <div class="fixed-action-btn">
               <a onclick="geoLoc()"><button class="btn-floating btn-large"><i class="material-icons">my_location</i></button></a>
-              <a class="btn-floating btn-large"><i class="material-icons">search</i></a>
+              
             </div>
           </div>
         </div>
@@ -47,21 +47,21 @@ L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/t
 }).addTo(mymap);
 
   var myIcon = L.icon({
-    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo.svg',
+    iconUrl: 'https://yohannt.promo-5.codeur.online/poop_time_v2/views/img/icone_geo.svg',
     iconSize: [25, 47],
     iconAnchor: [12.5, 46],
     popupAnchor: [-3, -76],
   });
 
   var myIcon1 = L.icon({
-    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo1.svg',
+    iconUrl: 'https://yohannt.promo-5.codeur.online/poop_time_v2/views/img/icone_geo1.svg',
     iconSize: [25, 47],
     iconAnchor: [12.5, 46],
     popupAnchor: [-3, -76],
   });
 
   var myIcon2 = L.icon({
-    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo2.svg',
+    iconUrl: 'https://yohannt.promo-5.codeur.online/poop_time_v2/views/img/icone_geo2.svg',
     iconSize: [35, 57],
     iconAnchor: [22.5, 56],
     popupAnchor: [-3, -76],
@@ -95,7 +95,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/t
 
     popup
     .setLatLng(e.latlng)
-    .setContent("<a href='http://localhost/poop_time_v2/insert'><button id='btnP' class='btn-large'>Proposez un toilette</button></a>")
+    .setContent("<a href='https://yohannt.promo-5.codeur.online/poop_time_v2/insert'><button id='btnP' class='btn-large'>Proposez un toilette</button></a>")
     .openOn(mymap);
     localStorage.setItem('lat', e.latlng.lat);
     localStorage.setItem('lng', e.latlng.lng);

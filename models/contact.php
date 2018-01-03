@@ -12,10 +12,7 @@ if (isset($_POST["pseudo"])){
 			echo "Votre pseudo est trop court";
 			$prenomError = true;
 			}
-	else{
-	echo $pseudo;
-	}
-		
+	
 		
 }
 
@@ -27,9 +24,7 @@ if (isset($_POST["ville"])){
 			echo "Veuillez rentrer un nom de Ville valide";
 			$villeError = true;
 			}
-	else{
-	echo $ville;
-	}
+	
 		
 }
 
@@ -43,9 +38,7 @@ if (isset($_POST["email"])){
 			echo "Veuillez rentrer un email valide";
 			$emailError = true;
 			}
-	else{
-	echo $email;
-	}
+	
 		
 }
 
@@ -58,13 +51,10 @@ if (isset($_POST["msg"])){
 			echo "Veuillez rentrer un message plus long valide";
 			$msgError = true;
 			}
-	else {
-	echo $msg;
-	}
-		
+	
 }
 
-if ($pseudoError == true $villeError == true || $msgError == true || $emailError == true)
+if ($pseudoError == true || $villeError == true || $msgError == true || $emailError == true)
 
 {
 	
@@ -74,8 +64,11 @@ if ($pseudoError == true $villeError == true || $msgError == true || $emailError
 
 else {
 	$message = " Pseudo ".$pseudo." Ville ".$ville." E-mail ".$email." Message : ".$msg;
+	
+	echo "Merci beaucoup. L'équipe de Poop_time va vous répondre dès que possible";
 
 	mail("yohann.thorez@gmail.com", "Envoi du formulaire", $message);
+	header("refresh:3;url=https://yohannt.promo-5.codeur.online/poop_time_v2");
 }
 
 ?>

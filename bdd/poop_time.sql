@@ -7,23 +7,20 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
--- -----------------------------------------------------
--- Schema poop_time
--- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `poop_time` ;
+
 
 -- -----------------------------------------------------
 -- Schema poop_time
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `poop_time` DEFAULT CHARACTER SET utf8 ;
-USE `poop_time` ;
+CREATE SCHEMA IF NOT EXISTS `yohannt_poop_time` DEFAULT CHARACTER SET utf8 ;
+USE `yohannt_poop_time` ;
 
 -- -----------------------------------------------------
--- Table `poop_time`.`ville`
+-- Table `yohannt_poop_time`.`ville`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `poop_time`.`ville` ;
+DROP TABLE IF EXISTS `yohannt_poop_time`.`ville` ;
 
-CREATE TABLE IF NOT EXISTS `poop_time`.`ville` (
+CREATE TABLE IF NOT EXISTS `yohannt_poop_time`.`ville` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nom_ville` VARCHAR(245) NULL,
   PRIMARY KEY (`id`))
@@ -31,11 +28,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `poop_time`.`users`
+-- Table `yohannt_poop_time`.`users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `poop_time`.`users` ;
+DROP TABLE IF EXISTS `yohannt_poop_time`.`users` ;
 
-CREATE TABLE IF NOT EXISTS `poop_time`.`users` (
+CREATE TABLE IF NOT EXISTS `yohannt_poop_time`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `pseudo` VARCHAR(245) NULL,
   PRIMARY KEY (`id`))
@@ -43,11 +40,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `poop_time`.`toilettes`
+-- Table `yohannt_poop_time`.`toilettes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `poop_time`.`toilettes` ;
+DROP TABLE IF EXISTS `yohannt_poop_time`.`toilettes` ;
 
-CREATE TABLE IF NOT EXISTS `poop_time`.`toilettes` (
+CREATE TABLE IF NOT EXISTS `yohannt_poop_time`.`toilettes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `longitude` DECIMAL(11,8) NOT NULL,
   `latitude` DECIMAL(10,8) NOT NULL,
@@ -63,23 +60,23 @@ CREATE TABLE IF NOT EXISTS `poop_time`.`toilettes` (
   INDEX `fk_toilettes_users1_idx` (`users_id` ASC),
   CONSTRAINT `fk_toilettes_ville`
     FOREIGN KEY (`ville_id`)
-    REFERENCES `poop_time`.`ville` (`id`)
+    REFERENCES `yohannt_poop_time`.`ville` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_toilettes_users1`
     FOREIGN KEY (`users_id`)
-    REFERENCES `poop_time`.`users` (`id`)
+    REFERENCES `yohannt_poop_time`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `poop_time`.`avis`
+-- Table `yohannt_poop_time`.`avis`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `poop_time`.`avis` ;
+DROP TABLE IF EXISTS `yohannt_poop_time`.`avis` ;
 
-CREATE TABLE IF NOT EXISTS `poop_time`.`avis` (
+CREATE TABLE IF NOT EXISTS `yohannt_poop_time`.`avis` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `note` INT NULL,
   `commentaire` LONGTEXT NULL,
@@ -90,23 +87,23 @@ CREATE TABLE IF NOT EXISTS `poop_time`.`avis` (
   INDEX `fk_avis_toilettes1_idx` (`toilettes_id` ASC),
   CONSTRAINT `fk_avis_users1`
     FOREIGN KEY (`users_id`)
-    REFERENCES `poop_time`.`users` (`id`)
+    REFERENCES `yohannt_poop_time`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_avis_toilettes1`
     FOREIGN KEY (`toilettes_id`)
-    REFERENCES `poop_time`.`toilettes` (`id`)
+    REFERENCES `yohannt_poop_time`.`toilettes` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `poop_time`.`fun_fact`
+-- Table `yohannt_poop_time`.`fun_fact`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `poop_time`.`fun_fact` ;
+DROP TABLE IF EXISTS `yohannt_poop_time`.`fun_fact` ;
 
-CREATE TABLE IF NOT EXISTS `poop_time`.`fun_fact` (
+CREATE TABLE IF NOT EXISTS `yohannt_poop_time`.`fun_fact` (
   `id` INT NOT NULL,
   `description` LONGTEXT NULL,
   PRIMARY KEY (`id`))
