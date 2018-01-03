@@ -29,6 +29,10 @@
 {% block home3 %}
 <script>
 
+	$( document ).ready(function() {
+ 	geoLoc();
+});
+
 var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.45);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ', {
@@ -100,8 +104,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/t
     function onAccuratePositionFound (e) {
       localStorage.setItem('curlat', e.latlng.lat);
       localStorage.setItem('curlng', e.latlng.lng);
-      mymap.setView(e.latlng, 12);
-      L.marker(e.latlng,{icon: myIcon2}).addTo(mymap);
+      mymap.setView(e.latlng, 14);
+      L.marker(e.latlng,{icon: myIcon1}).addTo(mymap);
 
     }
 
