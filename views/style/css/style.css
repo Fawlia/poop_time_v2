@@ -82,6 +82,9 @@ html, body {
 .btn-floating.btn-large {
   background-color: #222222; }
 
+.btn-large {
+  background-color: #222222; }
+
 #citations {
   font-size: 25px;
   font-weight: bold; }
