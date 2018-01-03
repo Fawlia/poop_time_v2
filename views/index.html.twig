@@ -26,12 +26,12 @@
 
 {% endblock %}
 
-{%block home3%}
+{% block home3 %}
 <script>
 
 var mymap = L.map('map').setView([ 47.0833300, 2.4000000], 5.45);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+L.tileLayer('https://api.mapbox.com/styles/v1/fawlia/cjbywhyf3fnfd2sqwiim84dt4/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ', {
   maxZoom: 18,
   id: 'mapbox.streets',
   accessToken: 'pk.eyJ1IjoiZmF3bGlhIiwiYSI6ImNqYmVxejI1ejI3MG4ydm1vZm9laXVya2QifQ.vUbCBecjNCgy9IEE6pDRaQ'
@@ -52,7 +52,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   });
 
   var myIcon2 = L.icon({
-    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo2.png',
+    iconUrl: 'http://localhost/poop_time_v2/views/img/icone_geo2.svg',
     iconSize: [25, 47],
     iconAnchor: [12.5, 46],
     popupAnchor: [-3, -76],

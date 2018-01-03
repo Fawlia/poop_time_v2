@@ -13,12 +13,12 @@ $twig = new Twig_Environment($loader, array(
 
 $router->map('GET', '/index.php',function(){
 	header('Location: http://localhost/poop_time_v2/home');
-	
+
 });
 
 $router->map('GET', '/',function(){
 	header('Location: http://localhost/poop_time_v2/home');
-	
+
 });
 
 
