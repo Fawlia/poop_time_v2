@@ -9,15 +9,19 @@ $twig = new Twig_Environment($loader, array(
     'debug' => true
 ));
 
+
+header('Access-Control-Allow-Origin', '*');
+
+
 // map homepage
 
 $router->map('GET', '/index.php',function(){
-	header('Location: http://localhost/poop_time_v2/home');
+	header('Location: /front/fsimmet/poop_time_v2/home');
 
 });
 
 $router->map('GET', '/',function(){
-	header('Location: http://localhost/poop_time_v2/home');
+	header('Location: /front/fsimmet/poop_time_v2/home');
 
 });
 
@@ -28,9 +32,12 @@ $router->map( 'GET', '/home', function() {
 	include_once "./models/Toilettes.class.php";
 	$mark = new Toilettes;
 	$mark2 = $mark->selectionToilettes($pdo);
+  //print_r($mark2);
 	global $twig;
 	echo $twig->render('index.html.twig', array('mark2' => $mark2));
-	//print_r($mark2);
+  echo 'toto';
+
+
 
 });
 
