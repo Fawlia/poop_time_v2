@@ -97,6 +97,13 @@ $router->map( 'GET', '/contact', function() {
 
 });
 
+$router->map( 'GET', '/merci', function() {
+
+		global $twig;
+	echo $twig->render('contactOk.html.twig');
+
+});
+
 
 $router->map( 'GET', '/insert', function() {
 
@@ -108,6 +115,12 @@ $router->map( 'GET', '/insert', function() {
 
 });
 
+
+$router->map( 'POST', '/verif', function() {
+		
+	include "./models/contact.php";
+
+});
 
 
 $router->map( 'GET', '/test', function() {

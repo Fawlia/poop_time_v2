@@ -13,6 +13,7 @@ $color2: #222222;
 $color_action: #5A7684;
 $font_logo: 'Ubuntu-Bold', sans-serif;
 $font_all: 'Ubuntu-Regular', sans-serif;
+$width_img: 30%;
 
 html, body{
   background-color: $color1;
@@ -144,7 +145,11 @@ body{
     }
   }
 }
-
+.slider{
+  #opacity{
+    opacity: 0.5;
+  }
+}
 .btn-floating.btn-large{
     background-color: #C40000;
 }
@@ -173,7 +178,7 @@ hr{
 
 #logo {
 	float: left;
-	margin-right: 30px;
+	margin-right: 20px;
 }
 
 #pC {
@@ -201,6 +206,48 @@ hr{
   margin-top: 50px;
 }
 
+h1 {
+	font-family: $font_logo;
+	font-size: 41px;
+	padding-top: 30px;
+}
+
+#tL {
+	height: 150px;
+}
+
+textarea {
+	height:80px;
+	margin-bottom: 15px;
+}
+
+#pseudo, #email, #ville {
+	border: 1px transparent solid;
+	border-bottom: 1px rgb(169, 169, 169) solid;
+	padding-left: 10px;
+	padding-top: 5px;
+	width: 100%;
+	color: darkgrey;
+}
+
+#msg {
+	margin-top: 50px;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+input::placeholder{
+	color:darkgrey;
+}
+
+textarea::placeholder{
+	color:darkgrey;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	background-color: transparent;
+}
+
 @media (min-width:481px) and (max-width:640px){
   footer{
     display: none;
@@ -210,8 +257,18 @@ hr{
     bottom: 23px;
   }
 
-  #logo{
-    margin-top: 3px;
+  #logo1{
+    margin-left: 50px !important;
+    margin-top: 3px !important;
+  }
+
+  .logo_desc{
+    float: left;
+    width: $width_img;
+  }
+
+  .hide-on-small-only{
+    display: none !important;
   }
 }
 
@@ -220,8 +277,14 @@ hr{
     bottom: 73px;
   }
 
-  #logo{
-    margin-top: 3px;
+  #logo1{
+    margin-left: 50px !important;
+    margin-top: 3px !important;
+  }
+
+  .logo_desc{
+    float: left;
+    width: $width_img;
   }
 }
 
@@ -230,11 +293,17 @@ hr{
     bottom: 73px;
   }
 
-  #logo{
-    margin-top: 3px;
+  #logo1{
+    margin-left: 50px !important;
+    margin-top: 3px !important;
+  }
+
+  .logo_desc{
+    float: left;
+    width: $width_img;
   }
 
   #img_histoire{
-    width: 30%;
+    width: $width_img;
   }
 }

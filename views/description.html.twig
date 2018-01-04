@@ -1,50 +1,72 @@
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Infos sur le toilette{% endblock %}
 
 {% block body %}
-
   <div class="container-fluid">
     <div class="container">
-
       <div id='desc' class="row">
-        <div class="col s12 m12 l6 offset-l3 xl6 offset-xl3 center-align">
+        <div class="col s12 m12 l6 offset-l3 xl6 offset-xl3">
           <h3> Infos sur le toilette</h3>
+          <div class="">
+            <img class="logo_desc" src="views/img/logo_funfact.svg" alt="1">
+            <p><i class="small material-icons">home</i> Adresse : {{ tabInfo['adresse'] }}</p>
 
-        <p><i class="small material-icons">home</i> Adresse : {{ tabInfo['adresse'] }}</p>
+            {% if tabInfo['handicape'] == 0 %}
+              <p><i class="small material-icons">accessible</i> Handicapé : Non</p>
+            {% else %}
+              <p><i class="small material-icons">accessible</i> Handicapé : Oui</p>
+            {% endif %}
 
-        {% if tabInfo['handicape'] == 0 %}
-          <p><i class="small material-icons">accessible</i> Handicapé : Non</p>
-        {% else %}
-          <p><i class="small material-icons">accessible</i> Handicapé : Oui</p>
-        {% endif %}
+            {% if tabInfo['payant'] == 0 %}
+              <p><i class="small material-icons">euro_symbol</i> Payant : Non</p>
+            {% else %}
+              <p><i class="small material-icons">euro_symbol</i> Payant : Oui</p>
+            {% endif %}
 
-        {% if tabInfo['payant'] == 0 %}
-          <p><i class="small material-icons">euro_symbol</i> Payant : Non</p>
-        {% else %}
-          <p><i class="small material-icons">euro_symbol</i> Payant : Oui</p>
-        {% endif %}
+            {% if tabInfo['description']%}
+              <p><i class="small material-icons">description</i> Description : {{ tabInfo['description'] }}</p>
+            {% endif %}
 
-        {% if tabInfo['description']%}
-          <p><i class="small material-icons">description</i> Description : {{ tabInfo['description'] }}</p>
-        {% endif %}
+            {% if tabInfo['type'] %}
+              <p><i class="small material-icons">info</i> Type : {{ tabInfo['type'] }}</p>
+            {% endif %}
 
-        {% if tabInfo['type'] %}
-          <p><i class="small material-icons">info</i> Type : {{ tabInfo['type'] }}</p>
-        {% endif %}
+            {% if tabInfo['ville'] != 'Autoroute'%}
+              <p><i class="small material-icons">location_city</i>Ville : {{ tabInfo['ville'] }}</p>
+            {% endif %}
 
-        {% if tabInfo['ville'] != 'Autoroute'%}
-          <p><i class="small material-icons">location_city</i>Ville : {{ tabInfo['ville'] }}</p>
-        {% endif %}
-
-        {% if tabInfo['user'] != 'admin' %}
-          <p><i class="small material-icons">person</i>Ajouté par : {{ tabInfo['user'] }}</p>
-        {% endif %}
+            {% if tabInfo['user'] != 'admin' %}
+              <p><i class="small material-icons">person</i>Ajouté par : {{ tabInfo['user'] }}</p>
+            {% endif %}
           </div>
+        </div>
       </div>
     </div>
-
+    <div class="slider hide-on-small-only">
+      <ul class="slides">
+        <li>
+          <img id="opacity" src="views/img/caroussel/amy-reed-339261.jpg">
+          <div class="caption center-align">
+            <h3>Fun Fact</h3>
+            <h5 class="light grey-text text-lighten-3">Il fallait laisser une preuve du passage de l'homme sur la Lune. C'est donc tout naturellement que Neil Armstrong et ses petits camarades d'Apollo 11 ont laissé derrière eux un drapeau, un monument et plein de déchets, dont quatre beaux sacs bien remplis d'excréments.</h5>
+          </div>
+        </li>
+        <li>
+          <img id="opacity" src="views/img/caroussel/erik-zunder-100052.jpg">
+          <div class="caption left-align">
+            <h3>Fun Fact</h3>
+            <h5 class="light grey-text text-lighten-3">Les paresseux sont tellement paresseux qu’ils ne font caca qu’une fois par semaine. Et ils font une danse pour fêter ça.</h5>
+          </div>
+        </li>
+        <li>
+          <img id="opacity" src="views/img/caroussel/gabor-monori-2199.jpg">
+          <div class="caption right-align">
+            <h3>Fun Fact</h3>
+            <h5 class="light grey-text text-lighten-3">Il existe des pilules pour faire caca de l'or. Comptez tout de même 275 dollars par pillule.</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-
 {% endblock %}
