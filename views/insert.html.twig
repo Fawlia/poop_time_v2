@@ -14,7 +14,7 @@
 
 			var latitude = document.querySelector("#lat");
 			var longitude = document.querySelector("#lng");
-			
+
 			latitude.value = lat;
 			longitude.value = lng;
 		}
@@ -29,7 +29,7 @@
 	    <img src="http://localhost/poop_time_v2/views/img/logo_form.svg"alt="logo formulaire" width="110" height="110" style="float:left;margin-right: 40px;">
 	  	<p id="insertP">Apportez votre contribution à Poop-Time! <br/>Remplissez le formulaire ci-dessous pour proposer un toilette publique qui n'est pas encore recensé sur l'application.<br/>Laissez votre pseudo pour passer à la postérité et rentrer dans l'Histoire de l'application "Poop-time"!</p>
     </div>
-	    <form id="contact" action="http://localhost/poop_time_v2/models/insert.php" method="POST">
+	    <form id="insert" action="http://localhost/poop_time_v2/models/insert.php" method="POST">
 	      <div class="">
 	        <div class="form-group">
 	          <label for="lat"></label>
@@ -63,7 +63,7 @@
         <div class="col s5">
 	        <div class="form-group">
 	          <label for="handicape">Handicapé?</label>
-	          <select name='han' id="handicape">
+	          <select name='han' id="han">
 	          	<option value="1">Oui</option>
 	          	<option value="0">Non</option>
 	          	<option value="0">Je ne sais pas</option>
@@ -73,7 +73,7 @@
         <div class="col s5 offset-s2">
 	        <div class="form-group">
 	          <label for="payant">Payant?</label>
-	          <select name='pay' id="payant">
+	          <select name='pay' id="pay">
 		        	<option value="1">Oui</option>
 		        	<option value="0">Non</option>
 		        	<option value="0">Je ne sais pas</option>

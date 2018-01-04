@@ -9,6 +9,10 @@ $twig = new Twig_Environment($loader, array(
     'debug' => true
 ));
 
+
+header('Access-Control-Allow-Origin', '*');
+
+
 // map homepage
 
 $router->map('GET', '/index.php',function(){
@@ -116,8 +120,14 @@ $router->map( 'GET', '/insert', function() {
 });
 
 
+$router->map( 'POST', '/insertV', function() {
+
+	include "./models/insert.php";
+
+});
+
 $router->map( 'POST', '/verif', function() {
-		
+
 	include "./models/contact.php";
 
 });
