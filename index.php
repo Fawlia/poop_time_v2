@@ -120,6 +120,12 @@ $router->map( 'GET', '/insert', function() {
 });
 
 
+$router->map( 'POST', '/insertV', function() {
+
+	include "./models/insert.php";
+
+});
+
 $router->map( 'POST', '/verif', function() {
 
 	include "./models/contact.php";
