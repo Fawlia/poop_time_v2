@@ -7,42 +7,44 @@
 
   <div class="container-fluid">
     <div class="container">
-      <div class="row">
 
-      </div>
       <div id='desc' class="row">
-        <p>Adresse : {{ tabInfo['adresse'] }}</p>
+        <div class="col s12 m12 l6 offset-l3 xl6 offset-xl3 center-align">
+          <h3> Infos sur le toilette</h3>
+
+        <p><i class="small material-icons">home</i> Adresse : {{ tabInfo['adresse'] }}</p>
 
         {% if tabInfo['handicape'] == 0 %}
-          <p>Handicapé : Non</p>
+          <p><i class="small material-icons">accessible</i> Handicapé : Non</p>
         {% else %}
-          <p>Handicapé : Oui</p>
+          <p><i class="small material-icons">accessible</i> Handicapé : Oui</p>
         {% endif %}
 
         {% if tabInfo['payant'] == 0 %}
-          <p>Payant : Non</p>
+          <p><i class="small material-icons">euro_symbol</i> Payant : Non</p>
         {% else %}
-          <p>Payant : Oui</p>
+          <p><i class="small material-icons">euro_symbol</i> Payant : Oui</p>
         {% endif %}
 
         {% if tabInfo['description']%}
-          <p>Description : {{ tabInfo['description'] }}</p>
+          <p><i class="small material-icons">description</i> Description : {{ tabInfo['description'] }}</p>
         {% endif %}
 
         {% if tabInfo['type'] %}
-          <p>Type : {{ tabInfo['type'] }}</p>
+          <p><i class="small material-icons">info</i> Type : {{ tabInfo['type'] }}</p>
         {% endif %}
 
         {% if tabInfo['ville'] != 'Autoroute'%}
-          <p>Ville : {{ tabInfo['ville'] }}</p>
+          <p><i class="small material-icons">location_city</i>Ville : {{ tabInfo['ville'] }}</p>
         {% endif %}
 
         {% if tabInfo['user'] != 'admin' %}
-          <p>Ajouté par : {{ tabInfo['user'] }}</p>
+          <p><i class="small material-icons">person</i>Ajouté par : {{ tabInfo['user'] }}</p>
         {% endif %}
-
+          </div>
       </div>
     </div>
+
   </div>
 
 {% endblock %}
