@@ -20,7 +20,7 @@
 		}
 	</script>
 
-	<div class="container">
+	<div id="form_insert" class="container">
 	  <div class="row">
 	   	<div class="s12">
 	   	<h1>Ajoutez un toilette à "Poop-Time"</h1>
@@ -42,25 +42,25 @@
             <input type="hidden" name="lng" value="" class="form-control" id="lng">
           </div>
         </div>
-        <div class="col s12">
+        <div class="col s12 m12 l12 xl12">
           <div class="form-group">
             <label for="pseudo">Votre pseudo</label>
             <input type="text" name="pseudo" class="form-control" id="pseudo">
           </div>
         </div>
-       	<div class="col s12 m12 l5 xl5">
+       	<div class="col s12 m12 l6 xl6">
           <div class="form-group">
             <label for="adresse">Adresse du WC</label>
             <input type="text" name="adresse" class="form-control" id="adresse">
           </div>
         </div>
-       	<div class="col s12 m12 l5 xl5 offset-l2 offset-xl2">
+       	<div class="col s12 m12 l6 xl6">
 	        <div class="form-group">
             <label for="ville">Ville du WC</label>
             <input type="text" name="ville" class="form-control" id="ville">
 	        </div>
         </div>
-        <div class="col s5">
+        <div class="col s12 m5 l6 xl6">
 	        <div class="form-group">
 	          <label for="handicape">Handicapé?</label>
 	          <select name='han' id="han">
@@ -70,7 +70,7 @@
 	          </select>
 	        </div>
         </div>
-        <div class="col s5 offset-s2">
+        <div class="col s12 m5 l6 xl6">
 	        <div class="form-group">
 	          <label for="payant">Payant?</label>
 	          <select name='pay' id="pay">
@@ -80,15 +80,14 @@
 	          </select>
 	        </div>
         </div>
-        <div class="col s12">
+        <div class="col s12 m12 l12 xl12">
           <div class="form-group">
-	          <label for="msg">Commentaire</label>
 	          <textarea name="msg" class="form-control" id="msg"  placeholder="Ecrivez votre message"></textarea>
 		      </div>
         </div>
-        <div class="">
+        <div class="col s12 m12 l4 xl4">
           <div class="form-group">
-            <button type="submit" value="send" onclick="test()" class="btn">Envoyer</button>
+            <button id="btnP" type="submit" value="send" onclick="test()" class="btn">Envoyer</button>
           </div>
         </div>
 	    </form>

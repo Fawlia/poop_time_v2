@@ -1,5 +1,8 @@
 <?php
-
+$msg = "";
+$pseudo = "";
+$adresse = "";
+$ville = "";
 if (isset($_REQUEST['pseudo'])){
 
 	if(!empty($_REQUEST['pseudo'])){
