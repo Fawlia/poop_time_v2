@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Ubuntu-Bold';
   src: url("../fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype"); }
@@ -6,15 +7,23 @@
   src: url("../fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"); }
 html, body {
   background-color: #FFFFFF;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   height: 100%; }
+  html main, body main {
+    flex: 1 0 auto;
+    text-align: justify; }
   html #histoire h2, body #histoire h2 {
     font-family: "Ubuntu-Regular", sans-serif;
     font-size: 2em; }
   html #histoire p, body #histoire p {
     font-family: "Ubuntu-Regular", sans-serif;
     font-size: 1em; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
 
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
   position: absolute;
@@ -80,16 +89,94 @@ html, body {
         background-color: #5A7684; }
 
 .btn-floating.btn-large {
-  background-color: #222222; }
+  background-color: #C40000; }
 
+hr {
+  width: 75%;
+  height: 2px;
+  background-color: #222222;
+  border: none;
+  /*on supprime le style par d├®faut*/ }
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 .btn-large {
+=======
+#btnP {
+  font-family: "Ubuntu-Regular", sans-serif;
+>>>>>>> b6149110ec69d32e22f3d14e4494381e15d708c2
   background-color: #222222; }
+  #btnP:hover {
+    background-color: rgba(90, 118, 132, 0.4);
+    color: #222222; }
 
+<<<<<<< HEAD
 >>>>>>> 6bf52d09f8ab7f4f679c5e13e99aba2ccc808fbc
+=======
+>>>>>>> b6149110ec69d32e22f3d14e4494381e15d708c2
 #citations {
   font-size: 25px;
   font-weight: bold; }
+
+#logo {
+  float: left;
+  margin-right: 20px; }
+
+#pC {
+  padding-top: 30px; }
+
+#accueil2 {
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #222222;
+  font-family: "Ubuntu-Regular", sans-serif; }
+
+#base2 {
+  background-color: #222222;
+  font-family: "Ubuntu-Regular", sans-serif;
+  bottom: 0; }
+
+#bio {
+  margin-top: 50px; }
+
+@media screen and (min-width: 800px) {
+  .fixed-action-btn {
+    bottom: 93px; } }
+h1 {
+  font-family: "Ubuntu-Bold", sans-serif;
+  font-size: 41px;
+  padding-top: 30px; }
+
+#tL {
+  height: 150px; }
+
+textarea {
+  height: 80px;
+  margin-bottom: 15px; }
+
+#pseudo, #email, #ville {
+  border: 1px transparent solid;
+  border-bottom: 1px darkgray solid;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 100%;
+  color: darkgrey; }
+
+#msg {
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-top: 5px; }
+
+input::placeholder {
+  color: darkgrey; }
+
+textarea::placeholder {
+  color: darkgrey; }
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: transparent; }
 
 /*# sourceMappingURL=style.css.map */

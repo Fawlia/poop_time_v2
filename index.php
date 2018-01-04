@@ -2,7 +2,7 @@
 require "./vendor/autoload.php";
 
 $router = new AltoRouter();
-$router->setBasePath('poop_time_v2/index.php/');
+$router->setBasePath('front/fsimmet/poop_time_v2/');
 $loader = new Twig_Loader_Filesystem('views');
 $twig = new Twig_Environment($loader, array(
     'cache' => false,
@@ -35,10 +35,6 @@ $router->map( 'GET', '/home', function() {
   //print_r($mark2);
 	global $twig;
 	echo $twig->render('index.html.twig', array('mark2' => $mark2));
-  echo 'toto';
-
-
-
 });
 
 $router->map( 'GET', '/[i:id]', function($id) {
@@ -105,6 +101,13 @@ $router->map( 'GET', '/contact', function() {
 
 });
 
+$router->map( 'GET', '/merci', function() {
+
+		global $twig;
+	echo $twig->render('contactOk.html.twig');
+
+});
+
 
 $router->map( 'GET', '/insert', function() {
 
@@ -117,29 +120,16 @@ $router->map( 'GET', '/insert', function() {
 });
 
 
+$router->map( 'POST', '/verif', function() {
+
+	include "./models/contact.php";
+
+});
+
 
 $router->map( 'GET', '/test', function() {
     echo "Bonjour";
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

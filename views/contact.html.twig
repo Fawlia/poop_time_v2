@@ -14,6 +14,15 @@
 {% block body %}
    <div class="container">
     <div class="row">
+    	<div id="tL" class="s12 m12 l12 xl12">
+    		<img id="logo" src="/front/fsimmet/poop_time_v2/views/img/logo_form.svg" alt="Logo contact" width="150" height="150" />
+    		<h1>Contactez-nous!</h1>
+		</div>
+    	<div class="s12 m12 l12 xl12">
+    		
+    		<p id="pC">Vous avez remarqué un bug, une erreur ou vous souhaitez tout simplement nous poser une question, proposer une amélioration/un ajout de fonctionnalité? N'hésitez pas à nous en faire part via le formulaire de contact ci-dessous.<br/><br/> Toute l'équipe de "Poop Time" vous en remercie!</p>
+    		
+    	</div>
        
         <form id="contact" action="/front/fsimmet/poop_time_v2/models/contact.php" method="POST">
 
@@ -47,7 +56,7 @@
 
             <div class="s12 m12 l4 xl4">
                 <div class="form-group">
-                    <button type="submit" value="send" class="btn">Envoyer</button>
+                    <button type="submit" value="send" class="btn" id="btnP">Envoyer</button>
                 </div>
             </div>
         </form>

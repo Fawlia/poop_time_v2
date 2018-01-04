@@ -16,9 +16,13 @@ $font_all: 'Ubuntu-Regular', sans-serif;
 
 html, body{
   background-color: $color1;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   height: 100%;
+  main{
+    flex: 1 0 auto;
+	  text-align: justify;
+  }
   #histoire{
     h2{
       font-family: $font_all;
@@ -29,6 +33,12 @@ html, body{
       font-size: 1em;
     }
   }
+}
+
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar{
@@ -136,17 +146,108 @@ html, body{
 }
 
 .btn-floating.btn-large{
-    background-color: $color2;
+    background-color: #C40000;
 }
 
-<<<<<<< HEAD
-=======
-.btn-large{
+hr{
+  width: 75%;
+  height: 2px;
+
   background-color: $color2;
+  border: none; /*on supprime le style par défaut*/
 }
 
->>>>>>> 6bf52d09f8ab7f4f679c5e13e99aba2ccc808fbc
+.btn-large{
+
+
+#btnP{
+  font-family: $font_all;
+  background-color: $color2;
+  &:hover{
+    background-color: rgba($color_action, 0.4);
+    color: $color2;
+  }
+}
+
+
 #citations{
   font-size: 25px;
   font-weight: bold;
+}
+
+
+#logo {
+	float: left;
+	margin-right: 20px;
+}
+
+#pC {
+	padding-top: 30px;
+}
+
+#accueil2{
+  z-index: 10000;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: $color2;
+  font-family: $font_all;
+}
+
+#base2{
+  background-color: $color2;
+  font-family: $font_all;
+  bottom: 0;
+}
+
+#bio{
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 800px){
+  .fixed-action-btn{
+    bottom: 93px;
+  }
+}
+
+h1 {
+	font-family: $font_logo;
+	font-size: 41px;
+	padding-top: 30px;
+}
+#tL {
+	height: 150px;
+}
+
+textarea {
+	height:80px;
+	margin-bottom: 15px;
+}
+
+
+
+#pseudo, #email, #ville {
+	border: 1px transparent solid;
+	border-bottom: 1px rgb(169, 169, 169) solid;
+	padding-left: 10px;
+	padding-top: 5px;
+	width: 100%;
+	color: darkgrey;
+}
+
+#msg {
+	margin-top: 50px;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+input::placeholder{
+	color:darkgrey;
+}
+
+textarea::placeholder{
+	color:darkgrey;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+	background-color: transparent;
 }
