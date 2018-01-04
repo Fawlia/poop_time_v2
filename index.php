@@ -31,10 +31,6 @@ $router->map( 'GET', '/home', function() {
   //print_r($mark2);
 	global $twig;
 	echo $twig->render('index.html.twig', array('mark2' => $mark2));
-  echo 'toto';
-
-
-
 });
 
 $router->map( 'GET', '/[i:id]', function($id) {
