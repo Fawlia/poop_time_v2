@@ -139,14 +139,28 @@ html, body{
     background-color: $color2;
 }
 
-<<<<<<< HEAD
-=======
+
 .btn-large{
   background-color: $color2;
 }
 
->>>>>>> 6bf52d09f8ab7f4f679c5e13e99aba2ccc808fbc
+
 #citations{
   font-size: 25px;
   font-weight: bold;
 }
+
+#logo {
+	float: left;
+	margin-right: 30px;
+}
+
+#pC {
+	padding-top: 30px;
+}
+
+main {
+	text-align: justify;
+}
+
+

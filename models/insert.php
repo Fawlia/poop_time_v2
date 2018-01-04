@@ -46,7 +46,7 @@ if($han != '' && $pay != '' && $msg != '' && $pseudo != '' && $adresse != '' && 
 
 	$servername = "localhost";
 	$username = "root";
-	$password = "ubuntu";
+	$password = "";
 
 	try {
 		$options = array(

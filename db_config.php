@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "ubuntu";
+$password = "";
 
 try {
     $options = array(

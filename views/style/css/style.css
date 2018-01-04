@@ -82,14 +82,21 @@ html, body {
 .btn-floating.btn-large {
   background-color: #222222; }
 
-<<<<<<< HEAD
-=======
 .btn-large {
   background-color: #222222; }
 
->>>>>>> 6bf52d09f8ab7f4f679c5e13e99aba2ccc808fbc
 #citations {
   font-size: 25px;
   font-weight: bold; }
+
+#logo {
+  float: left;
+  margin-right: 30px; }
+
+#pC {
+  padding-top: 30px; }
+
+main {
+  text-align: justify; }
 
 /*# sourceMappingURL=style.css.map */
