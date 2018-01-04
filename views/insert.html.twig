@@ -3,119 +3,95 @@
 {% block title %}Proposez votre toilette{% endblock %}
 
 {% block body %}
+	<script>
+		console.log(localStorage.getItem("lat"));
+		console.log(localStorage.getItem("lng"));
 
-
-<script>
-
-	console.log(localStorage.getItem("lat"));
-	console.log(localStorage.getItem("lng"));
-
-	function test(){
-
+		function test(){
 			var lat = localStorage.getItem("lat");
 			var lng = localStorage.getItem("lng");
 			console.log("lat" + lat);
+
 			var latitude = document.querySelector("#lat");
 			var longitude = document.querySelector("#lng");
+			
 			latitude.value = lat;
 			longitude.value = lng;
-	}
+		}
+	</script>
 
-
-
-
-
-</script>
-
-<div class="container">
-    <div class="row">
-      <div class="s12">
-      	<img src="http://localhost/poop_time_v2/views/img/logo_form.svg"alt="logo formulaire" width="110" height="110" style="float:left;margin-right: 40px;">
-      	<p id="insertP">Apportez votre contribution à Poop-Time! <br/>Remplissez le formulaire ci-dessous pour proposer un toilette publique qui n'est pas encore recensé sur l'application.<br/>Laissez votre pseudo pour passer à la postérité et rentrer dans l'Histoire de l'application "Poop-time"!</p>
-      </div>
-
-        <form id="contact" action="http://localhost/poop_time_v2/models/insert.php" method="POST">
-
-
-
-
-            <div class="">
-                <div class="form-group">
-                    <label for="lat"></label>
-					<input type="hidden" name="lat" value="" class="form-control" id="lat">
-                </div>
-            </div>
-
-            <div class="">
-                <div class="form-group">
-                    <label for="lng"></label>
-                    <input type="hidden" name="lng" value="" class="form-control" id="lng">
-                </div>
-            </div>
-
-            <div class="col s12">
-                <div class="form-group">
-                    <label for="pseudo">Votre pseudo</label>
-                    <input type="text" name="pseudo" class="form-control" id="pseudo">
-                </div>
-            </div>
-
-             <div class="col s12 m12 l5 xl5">
-                <div class="form-group">
-                    <label for="adresse">Adresse du WC</label>
-                    <input type="text" name="adresse" class="form-control" id="adresse">
-                </div>
-            </div>
-
-             <div class="col s12 m12 l5 xl5 offset-l2 offset-xl2">
-                <div class="form-group">
-                    <label for="ville">Ville du WC</label>
-                    <input type="text" name="ville" class="form-control" id="ville">
-                </div>
-            </div>
-
-            <div class="col s5">
-                <div class="form-group">
-                    <label for="handicape">Handicapé?</label>
-                    <select name='han' id="handicape">
-                    	<option value="1">Oui</option>
-                    	<option value="0">Non</option>
-                    	<option value="0">Je ne sais pas</option>
-                    </select>
-
-
-                </div>
-            </div>
-
-            <div class="col s5 offset-s2">
-                <div class="form-group">
-                    <label for="payant">Payant?</label>
-                    <select name='pay' id="payant">
-                    	<option value="1">Oui</option>
-                    	<option value="0">Non</option>
-                    	<option value="0">Je ne sais pas</option>
-
-                    </select>
-                </div>
-            </div>
-
-            <div class="col s12">
-                <div class="form-group">
-                    <label for="msg">Commentaire</label>
-                    <textarea name="msg" class="form-control" id="msg"  placeholder="Ecrivez votre message"></textarea>
-                </div>
-            </div>
-
-
-
-            <div class="">
-                <div class="form-group">
-                    <button type="submit" value="send" onclick="test()" class="btn">Envoyer</button>
-                </div>
-            </div>
-        </form>
+	<div class="container">
+	  <div class="row">
+	   	<div class="s12">
+	   	<h1>Ajoutez un toilette à "Poop-Time"</h1>
+		</div>
+    <div class="s12">
+	    <img src="http://localhost/poop_time_v2/views/img/logo_form.svg"alt="logo formulaire" width="110" height="110" style="float:left;margin-right: 40px;">
+	  	<p id="insertP">Apportez votre contribution à Poop-Time! <br/>Remplissez le formulaire ci-dessous pour proposer un toilette publique qui n'est pas encore recensé sur l'application.<br/>Laissez votre pseudo pour passer à la postérité et rentrer dans l'Histoire de l'application "Poop-time"!</p>
+    </div>
+	    <form id="contact" action="http://localhost/poop_time_v2/models/insert.php" method="POST">
+	      <div class="">
+	        <div class="form-group">
+	          <label for="lat"></label>
+						<input type="hidden" name="lat" value="" class="form-control" id="lat">
+	        </div>
+	      </div>
+        <div class="">
+          <div class="form-group">
+            <label for="lng"></label>
+            <input type="hidden" name="lng" value="" class="form-control" id="lng">
+          </div>
         </div>
-
-</div>
-
+        <div class="col s12">
+          <div class="form-group">
+            <label for="pseudo">Votre pseudo</label>
+            <input type="text" name="pseudo" class="form-control" id="pseudo">
+          </div>
+        </div>
+       	<div class="col s12 m12 l5 xl5">
+          <div class="form-group">
+            <label for="adresse">Adresse du WC</label>
+            <input type="text" name="adresse" class="form-control" id="adresse">
+          </div>
+        </div>
+       	<div class="col s12 m12 l5 xl5 offset-l2 offset-xl2">
+	        <div class="form-group">
+            <label for="ville">Ville du WC</label>
+            <input type="text" name="ville" class="form-control" id="ville">
+	        </div>
+        </div>
+        <div class="col s5">
+	        <div class="form-group">
+	          <label for="handicape">Handicapé?</label>
+	          <select name='han' id="handicape">
+	          	<option value="1">Oui</option>
+	          	<option value="0">Non</option>
+	          	<option value="0">Je ne sais pas</option>
+	          </select>
+	        </div>
+        </div>
+        <div class="col s5 offset-s2">
+	        <div class="form-group">
+	          <label for="payant">Payant?</label>
+	          <select name='pay' id="payant">
+		        	<option value="1">Oui</option>
+		        	<option value="0">Non</option>
+		        	<option value="0">Je ne sais pas</option>
+	          </select>
+	        </div>
+        </div>
+        <div class="col s12">
+          <div class="form-group">
+	          <label for="msg">Commentaire</label>
+	          <textarea name="msg" class="form-control" id="msg"  placeholder="Ecrivez votre message"></textarea>
+		      </div>
+        </div>
+        <div class="">
+          <div class="form-group">
+            <button type="submit" value="send" onclick="test()" class="btn">Envoyer</button>
+          </div>
+        </div>
+	    </form>
+    </div>
+	</div>
 {% endblock %}

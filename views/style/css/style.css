@@ -109,6 +109,13 @@ hr {
   font-size: 25px;
   font-weight: bold; }
 
+#logo {
+  float: left;
+  margin-right: 30px; }
+
+#pC {
+  padding-top: 30px; }
+
 #accueil2 {
   z-index: 10000;
   position: absolute;

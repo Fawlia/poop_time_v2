@@ -152,6 +152,7 @@ body{
 hr{
   width: 75%;
   height: 2px;
+
   background-color: $color2;
   border: none; /*on supprime le style par défaut*/
 }
@@ -168,6 +169,15 @@ hr{
 #citations{
   font-size: 25px;
   font-weight: bold;
+}
+
+#logo {
+	float: left;
+	margin-right: 30px;
+}
+
+#pC {
+	padding-top: 30px;
 }
 
 #accueil2{

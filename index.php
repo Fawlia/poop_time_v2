@@ -116,25 +116,6 @@ $router->map( 'GET', '/test', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $match = $router->match();
 
 // call closure or throw 404 status
