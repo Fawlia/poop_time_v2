@@ -111,7 +111,7 @@ hr {
 
 #logo {
   float: left;
-  margin-right: 30px; }
+  margin-right: 20px; }
 
 #pC {
   padding-top: 30px; }
@@ -135,5 +135,38 @@ hr {
 @media screen and (min-width: 800px) {
   .fixed-action-btn {
     bottom: 93px; } }
+h1 {
+  font-family: "Ubuntu-Bold", sans-serif;
+  font-size: 41px;
+  padding-top: 30px; }
+
+#tL {
+  height: 150px; }
+
+textarea {
+  height: 80px;
+  margin-bottom: 15px; }
+
+#pseudo, #email, #ville {
+  border: 1px transparent solid;
+  border-bottom: 1px darkgray solid;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 100%;
+  color: darkgrey; }
+
+#msg {
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-top: 5px; }
+
+input::placeholder {
+  color: darkgrey; }
+
+textarea::placeholder {
+  color: darkgrey; }
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: transparent; }
 
 /*# sourceMappingURL=style.css.map */
